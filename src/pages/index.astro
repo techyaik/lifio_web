@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.jsx';
+import Hero from '../components/Hero.jsx';
+import Features from '../components/Features.jsx';
+import AppShowcase from '../components/AppShowcase.jsx';
+import Footer from '../components/Footer.jsx';
+---
+
+<Layout 
+  title="Lifio | Personal Tracker App" 
+  description="Turn small actions into visible progress with Lifio. Your personal tracker with no account setup, keeping your data local."
+>
+  <Navbar client:load />
+  <main>
+    <Hero client:load />
+    <Features client:visible />
+    <AppShowcase client:visible />
+  </main>
+  <Footer />
+</Layout>

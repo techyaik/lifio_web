@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.jsx';
+---
+
+<Layout 
+  title="Privacy Policy | Lifio" 
+  description="Privacy Policy for the Lifio app. Learn how we handle your data."
+>
+  <main class="container" style="padding-top: 6rem; padding-bottom: 6rem; max-width: 800px;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 2rem;">Privacy Policy</h1>
+    
+    <div class="card" style="padding: 3rem;">
+      <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);"><strong>Last Updated:</strong> {new Date().toLocaleDateString()}</p>
+      
+      <section style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">1. Introduction</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
+          Welcome to Lifio. We respect your privacy and are committed to protecting it. 
+          This Privacy Policy explains that we do not collect, store, or share your personal information.
+        </p>
+      </section>
+
+      <section style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">2. Data Collection & Storage (Local First)</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
+          Lifio is designed as a "local-first" application. All data you enter into the app—including your name, notes, habits, and health tracking data—is stored entirely locally on your device.
+        </p>
+        <ul style="color: var(--color-text-muted); margin-left: 1.5rem; margin-bottom: 1rem;">
+          <li>We do <strong>not</strong> require you to create an account.</li>
+          <li>We do <strong>not</strong> transmit your personal data to external servers.</li>
+          <li>We do <strong>not</strong> use analytics software to track your behavior within the app.</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">3. Third-Party Services</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
+          Lifio does not integrate with any third-party services that collect user data. There are no tracking scripts, ads, or hidden data harvesting mechanics.
+        </p>
+      </section>
+
+      <section style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">4. Children's Privacy</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
+          Because Lifio does not collect any personal data, it is inherently safe for children. We do not knowingly collect personal information from children under the age of 13.
+        </p>
+      </section>
+      
+      <section style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">5. Changes to This Privacy Policy</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
+          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">6. Contact Us</h2>
+        <p style="color: var(--color-text-muted);">
+          If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:support@lifio.app" style="color: var(--color-primary-blue); font-weight: 500;">support@lifio.app</a>
+        </p>
+      </section>
+    </div>
+  </main>
+  
+  <Footer client:idle />
+</Layout>

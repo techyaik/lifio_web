@@ -1,56 +1,91 @@
 import React from 'react';
+import featureGraphic from '../assets/Feature Graphic.png';
+import lifioIcon from '../assets/lifio-icon.png';
 
 const Hero = () => {
   return (
-    <section style={{ position: 'relative', paddingTop: '6rem', paddingBottom: '4rem', overflow: 'hidden' }}>
-      
-      {/* Background decoration */}
-      <div className="bg-blob" style={{ width: '400px', height: '400px', background: '#E0E7FF', top: '-100px', left: '-100px' }}></div>
-      <div className="bg-blob" style={{ width: '300px', height: '300px', background: '#FCE7F3', bottom: '10%', right: '-50px' }}></div>
-
-      <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+    <section style={{ 
+      paddingTop: '8rem', 
+      paddingBottom: '4rem',
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center'
+    }}>
+      <div className="container" style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+        gap: '4rem', 
+        alignItems: 'center' 
+      }}>
         
-        {/* App Icon Mockup from Screenshot */}
-        <div className="card animate-fade-up" style={{ 
-          width: '120px', 
-          height: '120px', 
-          borderRadius: '32px', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          marginBottom: '2.5rem',
-          position: 'relative'
-        }}>
-          {/* Mocking the stylized 'L' logo */}
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 10V42C20 48.6274 25.3726 54 32 54H44" stroke="#2365B0" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round"/>
-            <circle cx="44" cy="20" r="8" fill="#EF4444" />
-            <circle cx="44" cy="40" r="8" fill="#10B981" />
-            <path d="M41 40L43 42L47 38" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          {/* Notification Badge */}
-          <div style={{ position: 'absolute', top: '-10px', right: '-10px', width: '32px', height: '32px', background: '#695FCE', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        {/* Left Column: Text & Badges */}
+        <div style={{ textAlign: 'left' }}>
+          
+          <img 
+            src={lifioIcon.src} 
+            alt="Lifio Logo" 
+            style={{ 
+              width: '80px', 
+              height: '80px', 
+              marginBottom: '2rem',
+              borderRadius: '20px',
+              objectFit: 'contain',
+              background: 'white',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+            }} 
+          />
+
+          <h1 style={{ 
+            fontSize: '3.5rem', 
+            marginBottom: '1rem',
+            fontFamily: 'var(--font-heading)',
+            color: 'white',
+            lineHeight: '1.1'
+          }}>
+            Take control of your life.
+          </h1>
+          
+          <p style={{ 
+            fontSize: '1.25rem', 
+            color: 'var(--color-text-muted)', 
+            marginBottom: '2rem',
+            fontFamily: 'var(--font-main)'
+          }}>
+            Turn small actions into visible progress. Complete habit checklists, watch streaks grow, and see the week at a glance — every day.
+          </p>
+          
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <a href="#download" className="store-badge">
+              <span className="store-badge-icon">
+                <svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#2196F3" d="M106.3 32.8C91.5 47.9 83 71.3 83 103v818c0 31.7 8.5 55 23.3 70.1L111 995l473-473v-20L111 29l-4.7 3.8z"/>
+                  <path fill="#4CAF50" d="M741.5 660l-157.5-158v-20L741.5 324l5.1 2.9 187.7 106.7c53.5 30.4 53.5 80 0 110.5L746.6 657l-5.1 3z"/>
+                  <path fill="#F44336" d="M741.5 660l-157.5-158L106.3 991.1c20 21.2 52.5 24 90.7 2.3l544.5-333.4z"/>
+                  <path fill="#FFC107" d="M741.5 324l-544.5-333.4c-38.2-21.7-70.7-18.9-90.7 2.3L584 502l157.5-178z"/>
+                </svg>
+              </span>
+              <div>
+                <span className="store-badge-text-small">GET IT ON</span>
+                <span className="store-badge-text-large">Google Play</span>
+              </div>
+            </a>
           </div>
-        </div>
-
-        <div className="pill animate-fade-up" style={{ marginBottom: '1.5rem' }}>
-          BUILD GENTLE MOMENTUM
+          
         </div>
         
-        <h1 className="animate-fade-up delay-100" style={{ fontSize: '3.5rem', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
-          Turn small actions into visible progress.
-        </h1>
-        
-        <p className="animate-fade-up delay-200" style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)', maxWidth: '600px', margin: '0 auto 3rem auto' }}>
-          Complete habit checklists, watch streaks grow, and see the week at a glance.
-        </p>
-        
-        <div className="animate-fade-up delay-200" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
-          <a href="#download" className="btn btn-purple" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            Next
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </a>
+        {/* Right Column: Feature Graphic */}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <img 
+            src={featureGraphic.src} 
+            alt="Lifio Feature Graphic" 
+            style={{ 
+              width: '100%', 
+              maxWidth: '500px', 
+              borderRadius: '24px', 
+              boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)',
+              objectFit: 'contain'
+            }} 
+          />
         </div>
         
       </div>
