@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx';
+---
+
+<Layout 
+  title="Contact Support | Lifio App" 
+  description="Contact support for Lifio personal tracker mobile application. Direct developer support at imran@idexa.app with 24-48h response SLA."
+>
+  <Navbar client:load />
+  <main class="container" style="padding-top: 5rem; padding-bottom: 3.5rem; max-width: 860px;">
+    
+    {/* Page Header */}
+    <div style="margin-bottom: 2rem; text-align: left;">
+      <span style="color: var(--brand-lime); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;">
+        DIRECT DEVELOPER SUPPORT
+      </span>
+      <h1 style="font-size: 2.6rem; margin-top: 0.3rem; margin-bottom: 0.5rem; color: #FFFFFF; font-weight: 800; letter-spacing: -0.03em;">
+        Contact & Support
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.92rem; font-weight: 400;">
+        Have questions, bug reports, or feature suggestions for Lifio? We're here to help.
+      </p>
+    </div>
+
+    {/* Main Content Container */}
+    <div style="background-color: var(--bg-card); border-radius: 0px; padding: 2rem 1.75rem; border: 1px solid var(--border-app); boxShadow: 0 10px 30px rgba(0,0,0,0.3);">
+      
+      {/* Contact Card */}
+      <div style="background-color: rgba(255, 255, 255, 0.04); border-radius: 0px; padding: 1.5rem; border: 1px solid var(--border-app); margin-bottom: 2rem;">
+        <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.35rem;">
+          Official Support Email
+        </span>
+        <a href="mailto:imran@idexa.app" style="color: var(--brand-lime); font-weight: 800; text-decoration: none; font-size: 1.35rem;">
+          ✉️ imran@idexa.app
+        </a>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.6rem; line-height: 1.55;">
+          Handled directly by the lead developer of Lifio. We aim to respond within 24 to 48 business hours.
+        </p>
+      </div>
+
+      {/* Common Support Categories */}
+      <h3 style="font-size: 1.15rem; color: #FFFFFF; font-weight: 700; margin-bottom: 1rem;">
+        How Can We Help You?
+      </h3>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.85rem; margin-bottom: 2rem;">
+        <div style="padding: 1.1rem; border-radius: 0px; border: 1px solid var(--border-app); background-color: rgba(255, 255, 255, 0.03);">
+          <strong style="font-size: 0.92rem; color: #FFFFFF; display: block; margin-bottom: 0.2rem;">🐞 Bug Reports</strong>
+          <span style="font-size: 0.84rem; color: var(--text-muted);">Report unexpected app crashes or display issues.</span>
+        </div>
+
+        <div style="padding: 1.1rem; border-radius: 0px; border: 1px solid var(--border-app); background-color: rgba(255, 255, 255, 0.03);">
+          <strong style="font-size: 0.92rem; color: #FFFFFF; display: block; margin-bottom: 0.2rem;">🔗 Health Connect Help</strong>
+          <span style="font-size: 0.84rem; color: var(--text-muted);">Assistance linking Android Google Health Connect permissions.</span>
+        </div>
+
+        <div style="padding: 1.1rem; border-radius: 0px; border: 1px solid var(--border-app); background-color: rgba(255, 255, 255, 0.03);">
+          <strong style="font-size: 0.92rem; color: #FFFFFF; display: block; margin-bottom: 0.2rem;">💡 Feature Requests</strong>
+          <span style="font-size: 0.84rem; color: var(--text-muted);">Suggest new metrics or habit tracking ideas.</span>
+        </div>
+      </div>
+
+      {/* Support Commitment */}
+      <div style="padding-top: 1.25rem; border-top: 1px solid var(--border-app);">
+        <h4 style="font-size: 1rem; color: #FFFFFF; font-weight: 700; margin-bottom: 0.4rem;">
+          Zero Spam Commitment
+        </h4>
+        <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.55;">
+          When you email <a href="mailto:imran@idexa.app" style="color: var(--brand-lime); font-weight: 700;">imran@idexa.app</a>, your contact info is strictly used to address your support request. We never add support emails to marketing newsletters or sell contact lists.
+        </p>
+      </div>
+
+    </div>
+  </main>
+  
+  <Footer client:idle />
+</Layout>
+

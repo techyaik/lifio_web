@@ -1,67 +1,155 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
+import PrivacyShowcase from '../components/PrivacyShowcase.jsx';
 ---
 
 <Layout 
-  title="Privacy Policy | Lifio" 
-  description="Privacy Policy for the Lifio app. Learn how we handle your data."
+  title="Privacy Policy | Health, Habits, Wallet & Notes | Lifio App" 
+  description="Lifio Privacy Policy. Learn how your Health metrics, Habits checklists, Wallet Expense Tracker, and Personal Notes stay 100% private locally on your smartphone."
 >
-  <main class="container" style="padding-top: 6rem; padding-bottom: 6rem; max-width: 800px;">
-    <h1 style="font-size: 2.5rem; margin-bottom: 2rem;">Privacy Policy</h1>
-    
-    <div class="card" style="padding: 3rem;">
-      <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);"><strong>Last Updated:</strong> {new Date().toLocaleDateString()}</p>
+  <Navbar client:load />
+  <main style="padding-top: 5rem; padding-bottom: 4rem;">
+    <div class="container">
       
-      <section style="margin-bottom: 2.5rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">1. Introduction</h2>
-        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
-          Welcome to Lifio. We respect your privacy and are committed to protecting it. 
-          This Privacy Policy explains that we do not collect, store, or share your personal information.
+      {/* Page Header */}
+      <div style="margin-bottom: 2.5rem; text-align: left;">
+        <span style="color: var(--brand-lime); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;">
+          LOCAL-FIRST PRIVACY GUARANTEE
+        </span>
+        <h1 style="font-size: 2.6rem; margin-top: 0.3rem; margin-bottom: 0.5rem; color: #FFFFFF; font-weight: 800; letter-spacing: -0.03em;">
+          Privacy & Data Security Policy
+        </h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem; font-weight: 400;">
+          Effective Date: September 17, 2026 • Applies to Lifio Mobile Application for Android
         </p>
-      </section>
+      </div>
 
-      <section style="margin-bottom: 2.5rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">2. Data Collection & Storage (Local First)</h2>
-        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
-          Lifio is designed as a "local-first" application. All data you enter into the app—including your name, notes, habits, and health tracking data—is stored entirely locally on your device.
+      {/* Top 4 Privacy Sections Rendered as Cards Matched to Reference Image */}
+      <PrivacyShowcase client:load />
+
+      {/* Detailed Privacy Policy Full Text Container */}
+      <div style="max-width: 900px; margin: 0 auto; background-color: var(--bg-card); border-radius: 0px; padding: 2.5rem 2rem; border: 1px solid var(--border-app); box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+      
+      {/* 1. Expense Tracker & Wallet Privacy */}
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: #FFFFFF; font-weight: 800; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          1. Expense Tracker & Wallet Data Privacy
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.94rem; margin-bottom: 0.85rem;">
+          Lifio includes a personal <strong>Expense Tracker (Wallet)</strong> designed for private daily transaction logging. Here is how your financial privacy is protected:
         </p>
-        <ul style="color: var(--color-text-muted); margin-left: 1.5rem; margin-bottom: 1rem;">
-          <li>We do <strong>not</strong> require you to create an account.</li>
-          <li>We do <strong>not</strong> transmit your personal data to external servers.</li>
-          <li>We do <strong>not</strong> use analytics software to track your behavior within the app.</li>
+        <ul style="color: var(--text-muted); margin-left: 1.1rem; line-height: 1.8; font-size: 0.94rem;">
+          <li><strong style="color: #FFFFFF;">Zero Bank Connectivity:</strong> Lifio does <em>not</em> connect to Open Banking APIs, credit card accounts, or bank credentials.</li>
+          <li><strong style="color: #FFFFFF;">Private Balance Mode:</strong> Your total balance and spending amounts are hidden for privacy by default (toggleable via the eye icon).</li>
+          <li><strong style="color: #FFFFFF;">Manual Account Logging:</strong> Multi-account tags (e.g., Main Account, Cash, Savings) and category tags (Food, Transport, Bills, Shopping) exist purely inside local app database files.</li>
+          <li><strong style="color: #FFFFFF;">No Financial Telemetry:</strong> We cannot see, track, transmit, or sell your spending patterns or financial transactions.</li>
         </ul>
       </section>
 
-      <section style="margin-bottom: 2.5rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">3. Third-Party Services</h2>
-        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
-          Lifio does not integrate with any third-party services that collect user data. There are no tracking scripts, ads, or hidden data harvesting mechanics.
+      {/* 2. Health & Fitness Data Privacy */}
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: #FFFFFF; font-weight: 800; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          2. Health & Fitness Data Privacy
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.94rem; margin-bottom: 0.85rem;">
+          Lifio’s <strong>Track Your Health</strong> module acts as a completely private, offline logbook for all your physical wellness metrics. Here is how every health category is protected:
         </p>
+        <ul style="color: var(--text-muted); margin-left: 1.1rem; line-height: 1.8; font-size: 0.94rem;">
+          <li><strong style="color: #FFFFFF;">Movement & Activity Vitals:</strong> Daily step counts, active distance (km/mi), active calories burned (kcal), and exercise activity minutes stay stored strictly inside your phone’s local database sandbox.</li>
+          <li><strong style="color: #FFFFFF;">Rest & Sleep Stage Analysis:</strong> Sleep duration tracking (hours), sleep quality scores (0–100), and stage breakdowns (Deep, Light, REM, Awake) stay 100% offline on device memory.</li>
+          <li><strong style="color: #FFFFFF;">Heart Rate & Blood Oxygen Metrics:</strong> Resting and continuous heart rate logs (BPM) as well as Blood Oxygen saturation levels (SpO2 %) are kept private with zero cloud transmission or medical telemetry.</li>
+          <li><strong style="color: #FFFFFF;">Body Composition Records:</strong> Weight history (kg/lbs), height records (cm/ft), and body fat percentage logs remain on your device without upload to fitness cloud platforms.</li>
+          <li><strong style="color: #FFFFFF;">Cycle & Reproductive Health Tracking:</strong> Cycle logs (last period date, cycle length, period duration, flow intensity, and symptoms) are <strong>disabled by default</strong>. When enabled, period reminders schedule locally via Android alarms with zero cloud analytics or remote tracking servers.</li>
+          <li><strong style="color: #FFFFFF;">Hydration & Medicine Reminders:</strong> Daily water intake logs (glasses/liters) and medication reminder schedules operate offline without sending health logs over the network.</li>
+          <li><strong style="color: #FFFFFF;">Read-Only Google Health Connect Sync:</strong> When you connect Google Health Connect, Lifio reads health data directly on your device via Android native APIs. Lifio does <em>not</em> send your synced Health Connect data to any external server or third party.</li>
+        </ul>
       </section>
 
-      <section style="margin-bottom: 2.5rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">4. Children's Privacy</h2>
-        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
-          Because Lifio does not collect any personal data, it is inherently safe for children. We do not knowingly collect personal information from children under the age of 13.
+      {/* 3. Habits Checklists & Streak Data Privacy */}
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: #FFFFFF; font-weight: 800; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          3. Habits Checklists & Streak Data Privacy
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.94rem; margin-bottom: 0.85rem;">
+          Lifio’s <strong>Build Better Habits</strong> module empowers you to build routines with complete peace of mind:
         </p>
-      </section>
-      
-      <section style="margin-bottom: 2.5rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">5. Changes to This Privacy Policy</h2>
-        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">
-          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
-        </p>
+        <ul style="color: var(--text-muted); margin-left: 1.1rem; line-height: 1.8; font-size: 0.94rem;">
+          <li><strong style="color: #FFFFFF;">Local Habit Database:</strong> Daily habit routines, custom habit names, target frequency (daily, weekly), and check-off logs are stored exclusively in your device database.</li>
+          <li><strong style="color: #FFFFFF;">Offline Streak Calculation:</strong> Streak counters, milestone rings, and weekly progress percentages are calculated on-device without telemetry.</li>
+          <li><strong style="color: #FFFFFF;">Local Device Notifications:</strong> Custom habit reminders schedule through local Android system alarms. No external push messaging servers access your habit schedules or titles.</li>
+          <li><strong style="color: #FFFFFF;">Zero Behavioral Tracking:</strong> Lifio does not track how often you succeed or skip a habit, nor do we build behavioral profiles or monetize your habit data.</li>
+        </ul>
       </section>
 
+      {/* 4. Personal Notes & Notepad Data Privacy */}
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: #FFFFFF; font-weight: 800; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          4. Personal Notes & Notepad Data Privacy
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.94rem; margin-bottom: 0.85rem;">
+          Lifio’s <strong>Capture Your Notes</strong> module provides a fast, offline notepad for your thoughts and ideas:
+        </p>
+        <ul style="color: var(--text-muted); margin-left: 1.1rem; line-height: 1.8; font-size: 0.94rem;">
+          <li><strong style="color: #FFFFFF;">Encrypted Device Sandbox:</strong> Note titles, body text, tags, and pinned dashboard items reside directly inside your app sandbox storage.</li>
+          <li><strong style="color: #FFFFFF;">No Cloud Sync or Remote Crawling:</strong> Your private notes are never uploaded to cloud servers, external databases, or third-party AI model trainers.</li>
+          <li><strong style="color: #FFFFFF;">Fast Offline Keyword Search:</strong> Keyword searching across your notes operates entirely within local phone memory, ensuring your search queries never touch the internet.</li>
+          <li><strong style="color: #FFFFFF;">Immediate Deletion:</strong> Deleting a note permanently purges the entry from your phone’s local database file without retention on cloud backups.</li>
+        </ul>
+      </section>
+
+      {/* 5. Zero Account & Full Data Control */}
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: #FFFFFF; font-weight: 800; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          5. Zero Account & Full Data Control
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.94rem; margin-bottom: 0.85rem;">
+          Lifio is built from the ground up on a <strong>local-first, accountless architecture</strong>. You retain absolute ownership of all your data:
+        </p>
+        <ul style="color: var(--text-muted); margin-left: 1.1rem; line-height: 1.8; font-size: 0.94rem;">
+          <li><strong style="color: #FFFFFF;">No Account Registration:</strong> Lifio never asks for an email address, phone number, password, or social sign-in (Google, Facebook, Apple). You launch the app and start tracking immediately.</li>
+          <li><strong style="color: #FFFFFF;">Strict Android Sandbox Isolation:</strong> All SQLite database files reside exclusively inside your Android app sandbox storage. No remote servers or external apps have access to your data.</li>
+          <li><strong style="color: #FFFFFF;">Zero Tracking SDKs & Ad Networks:</strong> Lifio does not embed invasive telemetry, advertising SDKs (e.g. Google AdMob, Meta Ads), or behavior tracking frameworks.</li>
+          <li><strong style="color: #FFFFFF;">Instant Permanent Deletion:</strong> Uninstalling Lifio or selecting "Clear Storage / Clear Data" in your Android system settings instantly and permanently deletes 100% of your database records with zero residual cloud traces.</li>
+          <li><strong style="color: #FFFFFF;">User-Controlled Local Backups:</strong> Any manual data exports (JSON or CSV) remain strictly in your control to save locally on your device storage or personal backup drive.</li>
+        </ul>
+      </section>
+
+      {/* 6. Contact Information & Support */}
       <section>
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">6. Contact Us</h2>
-        <p style="color: var(--color-text-muted);">
-          If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:support@lifio.app" style="color: var(--color-primary-blue); font-weight: 500;">support@lifio.app</a>
+        <h2 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: #FFFFFF; font-weight: 800; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          6. Contact Information, Support & Policy Transparency
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.94rem; margin-bottom: 0.85rem;">
+          We believe in direct, transparent communication. If you have questions regarding offline data security, bug reports, feature requests, or privacy guarantees across Health, Habits, Expense Tracking, or Notes:
         </p>
+        <ul style="color: var(--text-muted); margin-left: 1.1rem; line-height: 1.8; font-size: 0.94rem; margin-bottom: 1.25rem;">
+          <li><strong style="color: #FFFFFF;">Direct Developer Contact:</strong> You can contact the creator of Lifio directly via email at <a href="mailto:imran@idexa.app" style="color: var(--brand-lime); font-weight: 800; text-decoration: none;">imran@idexa.app</a>.</li>
+          <li><strong style="color: #FFFFFF;">Responsive SLA:</strong> All support tickets and privacy inquiries are answered personally within 24 to 48 business hours.</li>
+          <li><strong style="color: #FFFFFF;">Zero Spam Guarantee:</strong> When you email support, your contact details are strictly used to address your request. We never add support emails to marketing newsletters or sell contact lists.</li>
+          <li><strong style="color: #FFFFFF;">Policy Update Transparency:</strong> Any future adjustments to this Privacy Policy will be published directly on this URL with an updated "Effective Date" banner.</li>
+        </ul>
+        <div style="background-color: rgba(255, 255, 255, 0.04); border-radius: 14px; padding: 1.1rem 1.25rem; border: 1px solid var(--border-app); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.05em; display: block;">
+              Official Support Email
+            </span>
+            <a href="mailto:imran@idexa.app" style="color: #FFFFFF; font-weight: 800; text-decoration: none; font-size: 1.1rem;">
+              ✉️ imran@idexa.app
+            </a>
+          </div>
+          <a href="mailto:imran@idexa.app" style="background-color: var(--brand-lime); color: #0B130F; font-weight: 800; padding: 0.55rem 1.15rem; border-radius: 8px; text-decoration: none; font-size: 0.88rem;">
+            Send Email
+          </a>
+        </div>
       </section>
+
     </div>
-  </main>
+  </div>
+</main>
   
   <Footer client:idle />
 </Layout>
+
+

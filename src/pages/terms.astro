@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx';
+---
+
+<Layout 
+  title="Terms of Service | Lifio App" 
+  description="Terms of Service for Lifio personal tracker mobile application. Learn about local offline license terms, data ownership, and support policies."
+>
+  <Navbar client:load />
+  <main class="container" style="padding-top: 5rem; padding-bottom: 3.5rem; max-width: 860px;">
+    
+    {/* Page Header */}
+    <div style="margin-bottom: 2rem; text-align: left;">
+      <span style="color: var(--brand-lime); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;">
+        LEGAL AGREEMENT & TERMS
+      </span>
+      <h1 style="font-size: 2.6rem; margin-top: 0.3rem; margin-bottom: 0.5rem; color: #FFFFFF; font-weight: 800; letter-spacing: -0.03em;">
+        Terms of Service
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.92rem; font-weight: 400;">
+        Effective Date: September 17, 2026 • Applies to Lifio Application for Android
+      </p>
+    </div>
+
+    {/* Main Content Container */}
+    <div style="background-color: var(--bg-card); border-radius: 0px; padding: 2rem 1.75rem; border: 1px solid var(--border-app); boxShadow: 0 10px 30px rgba(0,0,0,0.3);">
+      
+      {/* Section 1 */}
+      <section style="margin-bottom: 1.75rem;">
+        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          1. Acceptance of Terms
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
+          By downloading, installing, or using the Lifio mobile application, you agree to be bound by these Terms of Service. Lifio is a personal tracking tool provided for offline daily habit, physical wellness, expense, and note organization.
+        </p>
+      </section>
+
+      {/* Section 2 */}
+      <section style="margin-bottom: 1.75rem;">
+        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          2. Personal Offline Usage License
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
+          Lifio grants you a non-exclusive, non-transferable, personal license to run the application on your Android device. Lifio is an accountless, local-first app that stores 100% of data locally on your device database.
+        </p>
+      </section>
+
+      {/* Section 3 */}
+      <section style="margin-bottom: 1.75rem;">
+        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          3. Medical & Financial Disclaimer
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
+          Lifio is designed for personal logging and self-tracking only. Lifio is not a certified medical device and does not provide medical diagnoses or healthcare advice. Vitals logged in Lifio or synced via Google Health Connect should not replace professional medical advice. Expense logs entered in Lifio are for personal bookkeeping only and do not constitute financial advice.
+        </p>
+      </section>
+
+      {/* Section 4 */}
+      <section style="margin-bottom: 1.75rem;">
+        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          4. User Data Ownership & Backups
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
+          Because Lifio operates offline without cloud synchronization servers, you are solely responsible for managing your device database and making local backups. Uninstalling Lifio or clearing system application storage permanently erases local data.
+        </p>
+      </section>
+
+      {/* Section 5 */}
+      <section>
+        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
+          5. Support & Inquiries
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
+          For support inquiries, bug reports, or legal questions, please email the developer directly:
+        </p>
+        <div style="margin-top: 0.75rem;">
+          <a href="mailto:imran@idexa.app" style="color: var(--brand-lime); font-weight: 800; text-decoration: none; font-size: 1.05rem;">
+            ✉️ imran@idexa.app
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  
+  <Footer client:idle />
+</Layout>
+

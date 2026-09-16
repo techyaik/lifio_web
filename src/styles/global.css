@@ -1,14 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Muli:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=Caveat:wght@600;700&display=swap');
 
 :root {
-  --color-bg: #151515; /* Dark background from screenshot */
-  --color-card: #222222;
-  --color-text-main: #FFFFFF;
-  --color-text-muted: #A0A0A0;
-  --color-accent: #fdcc52; 
-  
-  --font-main: 'Muli', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-heading: 'Catamaran', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Lifio Sleek Dark Forest Palette (Matched to User Reference) */
+  --bg-app: #08120C;         /* Deep charcoal forest background */
+  --bg-app-alt: #0D1912;     /* Alternate dark section background */
+  --bg-card: #0D1C14;        /* Elevated dark forest card surface */
+  --bg-card-hover: #12251B;  /* Card hover state */
+
+  --text-main: #FFFFFF;      /* High contrast crisp white headings */
+  --text-muted: #94A89C;     /* Muted green-silver body text */
+  --text-subtle: #647B6F;    /* Subtle hint text */
+
+  --brand-emerald: #10B981;  /* Vibrant emerald green */
+  --brand-lime: #70E0A3;     /* Neon Mint/Lime Green accent */
+  --brand-gold: #F5D06A;     /* Warm gold accent */
+  --brand-blue: #B4CEFF;     /* Ice blue accent */
+
+  /* Feature Module Badge Tokens */
+  --color-health-bg: rgba(112, 224, 163, 0.12);
+  --color-health-border: rgba(112, 224, 163, 0.3);
+  --color-health-text: #70E0A3;
+
+  --color-habits-bg: rgba(112, 224, 163, 0.12);
+  --color-habits-border: rgba(112, 224, 163, 0.3);
+  --color-habits-text: #70E0A3;
+
+  --color-wallet-bg: rgba(245, 208, 106, 0.12);
+  --color-wallet-border: rgba(245, 208, 106, 0.3);
+  --color-wallet-text: #F5D06A;
+
+  --color-notes-bg: rgba(180, 206, 255, 0.12);
+  --color-notes-border: rgba(180, 206, 255, 0.3);
+  --color-notes-text: #B4CEFF;
+
+  --border-app: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.05);
+
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-handwriting: 'Caveat', cursive;
 }
 
 * {
@@ -17,105 +47,116 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-app);
+}
+
 body {
-  font-family: var(--font-main);
-  background-color: var(--color-bg);
-  color: var(--color-text-main);
-  line-height: 1.6;
+  font-family: var(--font-body);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  /* Hexagon-like pattern background */
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.92304845413264' viewBox='0 0 60 103.92304845413264' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.92304845413264L60 86.60254037844386L60 51.96152422706632L30 34.64101615137754L0 51.96152422706632L0 86.60254037844386z' fill='none' stroke='%23222222' stroke-width='1'/%3E%3Cpath d='M30 51.96152422706632L60 34.64101615137754L60 0L30 -17.32050807568877L0 0L0 34.64101615137754z' fill='none' stroke='%23222222' stroke-width='1'/%3E%3C/svg%3E");
-  background-attachment: fixed;
+  /* Dot Matrix Grid Overlay matched to attached reference */
+  background-image: radial-gradient(rgba(112, 224, 163, 0.1) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  color: var(--text-main);
+  letter-spacing: -0.025em;
   font-weight: 700;
-  line-height: 1.2;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.nav-link {
-  transition: color 0.2s ease;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.nav-link:hover {
-  color: var(--color-accent);
 }
 
 .container {
   width: 100%;
-  max-width: 1200px; /* Wider for 2-column layout */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.25rem;
 }
 
-/* Store Badge Buttons */
-.store-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: #000;
-  border: 1px solid #333;
-  color: white;
-  padding: 0.5rem 1.25rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.2s;
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
 }
 
-.store-badge:hover {
-  background-color: #111;
-  border-color: #555;
+.handwriting {
+  font-family: var(--font-handwriting);
+  font-size: 1.35rem;
+  color: var(--brand-lime);
 }
 
-.store-badge-icon {
-  font-size: 1.75rem;
-}
-
-.store-badge-text-small {
-  font-size: 0.65rem;
-  line-height: 1;
-  color: #AAA;
-  display: block;
-}
-
-.store-badge-text-large {
-  font-size: 1.1rem;
+.nav-item {
+  color: var(--text-muted);
   font-weight: 600;
-  line-height: 1.1;
-  display: block;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-/* Mobile Phone Frame */
-.phone-frame {
+.nav-item:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Features Grid: 2x2 Grid on Desktop/Tablet, 1-col on Mobile */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Sharp Executive Feature Card matching attached 90° right-angle corner reference */
+.feature-card {
+  background-color: var(--bg-card);
+  border-radius: 0px; /* Crisp sharp 90-degree right-angle corner */
+  padding: 1.65rem;
+  border: 1px solid var(--border-app);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  width: 320px;
-  height: 650px;
-  border: 12px solid #222;
-  border-radius: 40px;
-  background-color: #F8F9FA; /* Light inside for app */
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-  margin: 0 auto;
 }
 
-.phone-notch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 25px;
-  background-color: #222;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
-  z-index: 20;
+.feature-card:hover {
+  transform: translateY(-3px);
+  background-color: var(--bg-card-hover);
+  border-color: rgba(112, 224, 163, 0.35);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
 }
+
+/* Sharp Inset Frame for Screenshots & Media */
+.sharp-inset-box {
+  margin-top: auto;
+  border-radius: 0px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  background-color: #070E0A;
+  height: 215px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    padding: 1.3rem;
+  }
+}
+
+
+
+
+

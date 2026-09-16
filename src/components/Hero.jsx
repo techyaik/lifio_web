@@ -1,96 +1,123 @@
 import React from 'react';
-import featureGraphic from '../assets/Feature Graphic.png';
-import lifioIcon from '../assets/lifio-icon.png';
+import { IoLogoGooglePlaystore } from 'react-icons/io5';
+import featuredGraphic from '../assets/Featured Imgae.jpeg';
 
 const Hero = () => {
   return (
-    <section style={{ 
-      paddingTop: '8rem', 
-      paddingBottom: '4rem',
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center'
-    }}>
-      <div className="container" style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-        gap: '4rem', 
-        alignItems: 'center' 
-      }}>
+    <section style={{ paddingTop: '5.5rem', paddingBottom: '2.5rem' }}>
+      <div className="container">
         
-        {/* Left Column: Text & Badges */}
-        <div style={{ textAlign: 'left' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+          gap: '2rem',
+          alignItems: 'center'
+        }}>
           
-          <img 
-            src={lifioIcon.src} 
-            alt="Lifio Logo" 
-            style={{ 
-              width: '80px', 
-              height: '80px', 
-              marginBottom: '2rem',
-              borderRadius: '20px',
-              objectFit: 'contain',
-              background: 'white',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
-            }} 
-          />
+          {/* Left Column: Clear Value Proposition */}
+          <div>
+            {/* App Category Badge */}
+            <div style={{ 
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              backgroundColor: 'var(--color-health-bg)',
+              color: 'var(--color-health-text)',
+              padding: '0.3rem 0.85rem',
+              borderRadius: '9999px',
+              fontSize: '0.78rem',
+              fontWeight: '700',
+              marginBottom: '1rem',
+              border: '1px solid var(--color-health-border)'
+            }}>
+              <span style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: 'var(--color-health-text)' }}></span>
+              ALL-IN-ONE PERSONAL LIFE TRACKER
+            </div>
 
-          <h1 style={{ 
-            fontSize: '3.5rem', 
-            marginBottom: '1rem',
-            fontFamily: 'var(--font-heading)',
-            color: 'white',
-            lineHeight: '1.1'
-          }}>
-            Take control of your life.
-          </h1>
-          
-          <p style={{ 
-            fontSize: '1.25rem', 
-            color: 'var(--color-text-muted)', 
-            marginBottom: '2rem',
-            fontFamily: 'var(--font-main)'
-          }}>
-            Turn small actions into visible progress. Complete habit checklists, watch streaks grow, and see the week at a glance — every day.
-          </p>
-          
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="#download" className="store-badge">
-              <span className="store-badge-icon">
-                <svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#2196F3" d="M106.3 32.8C91.5 47.9 83 71.3 83 103v818c0 31.7 8.5 55 23.3 70.1L111 995l473-473v-20L111 29l-4.7 3.8z"/>
-                  <path fill="#4CAF50" d="M741.5 660l-157.5-158v-20L741.5 324l5.1 2.9 187.7 106.7c53.5 30.4 53.5 80 0 110.5L746.6 657l-5.1 3z"/>
-                  <path fill="#F44336" d="M741.5 660l-157.5-158L106.3 991.1c20 21.2 52.5 24 90.7 2.3l544.5-333.4z"/>
-                  <path fill="#FFC107" d="M741.5 324l-544.5-333.4c-38.2-21.7-70.7-18.9-90.7 2.3L584 502l157.5-178z"/>
-                </svg>
+            <h1 style={{ 
+              fontSize: 'clamp(2.3rem, 4.5vw, 3.5rem)', 
+              lineHeight: '1.12', 
+              marginBottom: '1rem',
+              color: '#FFFFFF',
+              fontWeight: '800',
+              letterSpacing: '-0.03em'
+            }}>
+              A healthier, more<br />
+              organized you<span style={{ color: 'var(--brand-lime)' }}>.</span>
+            </h1>
+
+            <p style={{ 
+              fontSize: '1.08rem', 
+              color: 'var(--text-muted)', 
+              marginBottom: '1.8rem',
+              maxWidth: '480px',
+              lineHeight: '1.6',
+              fontWeight: '400'
+            }}>
+              Lifio seamlessly combines physical health monitoring, daily habit checklists, private expense tracking, and personal notes into one clean, offline Android application.
+            </p>
+
+            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', flexWrap: 'wrap' }}>
+              <a 
+                href="#download" 
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                  backgroundColor: 'var(--brand-lime)',
+                  color: '#0B130F',
+                  padding: '0.75rem 1.6rem',
+                  borderRadius: '9999px',
+                  textDecoration: 'none',
+                  fontWeight: '800',
+                  boxShadow: '0 8px 24px rgba(188, 228, 125, 0.25)',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
+                <IoLogoGooglePlaystore size={24} color="#0B130F" />
+                <div style={{ textAlign: 'left' }}>
+                  <span style={{ fontSize: '0.6rem', display: 'block', opacity: 0.8, letterSpacing: '0.06em', fontWeight: '800' }}>GET IT ON</span>
+                  <span style={{ fontSize: '1.02rem', fontWeight: '800', lineHeight: 1 }}>Google Play</span>
+                </div>
+              </a>
+
+              <span className="handwriting" style={{ transform: 'rotate(-2deg)', fontSize: '1.5rem' }}>
+                Small Steps. Brighter Days ~
               </span>
-              <div>
-                <span className="store-badge-text-small">GET IT ON</span>
-                <span className="store-badge-text-large">Google Play</span>
-              </div>
-            </a>
+            </div>
           </div>
-          
+
+          {/* Right Column: Clean App Feature Mockup */}
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{
+              borderRadius: '0px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1)',
+              background: 'var(--bg-card)',
+              padding: '6px'
+            }}>
+              <img 
+                src={featuredGraphic.src} 
+                alt="Lifio Mobile App - Health, Habits, Finances, Notes" 
+                style={{ 
+                  width: '100%', 
+                  maxWidth: '600px', 
+                  borderRadius: '0px', 
+                  display: 'block',
+                  objectFit: 'cover'
+                }} 
+              />
+            </div>
+          </div>
+
         </div>
-        
-        {/* Right Column: Feature Graphic */}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <img 
-            src={featureGraphic.src} 
-            alt="Lifio Feature Graphic" 
-            style={{ 
-              width: '100%', 
-              maxWidth: '500px', 
-              borderRadius: '24px', 
-              boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)',
-              objectFit: 'contain'
-            }} 
-          />
-        </div>
-        
+
       </div>
     </section>
   );
 };
 
 export default Hero;
+
