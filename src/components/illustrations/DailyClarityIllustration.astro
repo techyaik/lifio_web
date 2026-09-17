@@ -1,0 +1,30 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "w-full h-auto" } = Astro.props;
+---
+<svg viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg" class={className}>
+  <circle cx="120" cy="80" r="50" fill="#FAF5ED" />
+  <ellipse cx="120" cy="142" rx="55" ry="6" fill="#805044" fill-opacity="0.12" />
+
+  <path d="M60 120 Q 120 90, 180 120" stroke="#E5E2DC" stroke-width="2" stroke-linecap="round" />
+
+  <ellipse cx="120" cy="128" rx="28" ry="10" fill="#805044" fill-opacity="0.8" />
+  <ellipse cx="120" cy="116" rx="20" ry="8" fill="#8DAF2B" />
+  <ellipse cx="120" cy="105" rx="14" ry="6" fill="#DCD7F4" />
+
+  <g transform="translate(120, 68)">
+    <circle cx="0" cy="0" r="22" fill="#FFBB2C" />
+    <circle cx="-7" cy="-2" r="2" fill="#171717" />
+    <circle cx="7" cy="-2" r="2" fill="#171717" />
+    <ellipse cx="-11" cy="3" rx="3" ry="1.8" fill="#EBCFC7" />
+    <ellipse cx="11" cy="3" rx="3" ry="1.8" fill="#EBCFC7" />
+    <path d="M-4 5 C-1 8, 1 8, 4 5" stroke="#171717" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M0 -28 L0 -24 M18 -18 L15 -15 M24 0 L20 0 M-18 -18 L-15 -15 M-24 0 L-20 0" stroke="#FFBB2C" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <circle cx="58" cy="65" r="2.5" fill="#8DAF2B" />
+  <circle cx="182" cy="60" r="2.5" fill="#FFBB2C" />
+</svg>
+

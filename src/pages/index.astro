@@ -1,25 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.tsx';
-import Hero from '../components/Hero.tsx';
-import FeatureGrid from '../components/FeatureGrid.tsx';
-import WhyChooseUs from '../components/WhyChooseUs.tsx';
-import PrivacySecurity from '../components/PrivacySecurity.tsx';
-import Footer from '../components/Footer.tsx';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import PrivacySecurity from '../components/PrivacySecurity.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout 
-  title="lifio - Master your day, your health, and your wealth in one place" 
-  description="All-in-one personal tracking mobile app. Track daily vitals, log spending, write journal notes, and build habit streaks with 100% local privacy."
+  title="Lifio — Master your day, your health, and your wealth in one quiet place" 
+  description="All-in-one personal tracking mobile app for Android. Track daily vitals via Google Health Connect, log spending, write reflections, and build habit streaks with 100% offline privacy."
 >
-  <Navbar client:load />
+  <Navbar />
   
-  <main>
-    <Hero client:load />
-    <FeatureGrid client:visible />
-    <WhyChooseUs client:visible />
-    <PrivacySecurity client:visible />
+  <main class="flex-1">
+    <Hero />
+    <FeatureGrid />
+    <WhyChooseUs />
+    <PrivacySecurity />
   </main>
   
-  <Footer client:idle />
+  <Footer />
 </Layout>

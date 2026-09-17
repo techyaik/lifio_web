@@ -1,0 +1,72 @@
+---
+import { Heart } from 'lucide-react';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#F0EFEB] text-[#5F5C57] py-16 sm:py-20 border-t border-[#E5E2DC]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-[#E5E2DC]">
+      
+      {/* Brand with Rounded Logo */}
+      <div class="space-y-2">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <img 
+            src="/lifio-icon.png" 
+            alt="Lifio Logo" 
+            class="w-8 h-8 rounded-lg object-cover shadow-sm border border-[#E5E2DC]" 
+            width="32"
+            height="32"
+          />
+          <span class="text-2xl font-bold tracking-tight text-[#171717]">
+            Lifio<span class="text-[#FFBB2C]">.</span>
+          </span>
+        </a>
+        <p class="text-sm font-normal text-[#5F5C57] max-w-sm">
+          Your day, your health, and your wealth in one quiet place.
+        </p>
+      </div>
+
+      {/* Links */}
+      <div class="flex flex-wrap items-center gap-6 sm:gap-8 text-xs font-medium text-[#171717]">
+        <a href="/#features" class="hover:text-[#FFBB2C] transition-colors">
+          Features
+        </a>
+        <a href="/#benefits" class="hover:text-[#FFBB2C] transition-colors">
+          Why Lifio
+        </a>
+        <a href="/privacy" class="hover:text-[#FFBB2C] transition-colors">
+          Privacy Policy
+        </a>
+        <a href="/terms" class="hover:text-[#FFBB2C] transition-colors">
+          Terms of Service
+        </a>
+        <a href="/contact" class="hover:text-[#FFBB2C] transition-colors">
+          Contact Support
+        </a>
+        <a 
+          href="https://play.google.com/store/apps" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-[#171717] hover:text-[#FFBB2C] transition-colors font-semibold"
+        >
+          Google Play
+        </a>
+      </div>
+
+    </div>
+
+    {/* Bottom copyright */}
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-normal text-[#858174]">
+      <div>
+        © {currentYear} lifio. 100% offline, private, and local-first.
+      </div>
+      <div class="flex items-center gap-1.5 text-[#5F5C57]">
+        <span>Crafted for daily focus & clarity</span>
+        <Heart className="w-3.5 h-3.5 text-[#FFBB2C] fill-[#FFBB2C]" />
+      </div>
+    </div>
+
+  </div>
+</footer>

@@ -1,90 +1,118 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.tsx';
-import Footer from '../components/Footer.jsx';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { Scale, Mail } from 'lucide-react';
 ---
 
 <Layout 
-  title="Terms of Service | Lifio App" 
-  description="Terms of Service for Lifio personal tracker mobile application. Learn about local offline license terms, data ownership, and support policies."
+  title="Terms of Service | Lifio Mobile App" 
+  description="Terms of Service for Lifio personal tracker mobile application. Local-first personal use license, data ownership, and health disclaimers."
 >
-  <Navbar client:load />
-  <main class="container" style="padding-top: 5rem; padding-bottom: 3.5rem; max-width: 860px;">
-    
-    {/* Page Header */}
-    <div style="margin-bottom: 2rem; text-align: left;">
-      <span style="color: var(--brand-lime); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;">
-        LEGAL AGREEMENT & TERMS
-      </span>
-      <h1 style="font-size: 2.6rem; margin-top: 0.3rem; margin-bottom: 0.5rem; color: #FFFFFF; font-weight: 800; letter-spacing: -0.03em;">
-        Terms of Service
-      </h1>
-      <p style="color: var(--text-muted); font-size: 0.92rem; font-weight: 400;">
-        Effective Date: September 17, 2026 • Applies to Lifio Application for Android
-      </p>
-    </div>
+  <Navbar />
 
-    {/* Main Content Container */}
-    <div style="background-color: var(--bg-card); border-radius: 0px; padding: 2rem 1.75rem; border: 1px solid var(--border-app); boxShadow: 0 10px 30px rgba(0,0,0,0.3);">
+  <main class="py-12 sm:py-20 bg-[#F0EFEB] min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
       
-      {/* Section 1 */}
-      <section style="margin-bottom: 1.75rem;">
-        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
-          1. Acceptance of Terms
-        </h2>
-        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
-          By downloading, installing, or using the Lifio mobile application, you agree to be bound by these Terms of Service. Lifio is a personal tracking tool provided for offline daily habit, physical wellness, expense, and note organization.
-        </p>
-      </section>
-
-      {/* Section 2 */}
-      <section style="margin-bottom: 1.75rem;">
-        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
-          2. Personal Offline Usage License
-        </h2>
-        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
-          Lifio grants you a non-exclusive, non-transferable, personal license to run the application on your Android device. Lifio is an accountless, local-first app that stores 100% of data locally on your device database.
-        </p>
-      </section>
-
-      {/* Section 3 */}
-      <section style="margin-bottom: 1.75rem;">
-        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
-          3. Medical & Financial Disclaimer
-        </h2>
-        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
-          Lifio is designed for personal logging and self-tracking only. Lifio is not a certified medical device and does not provide medical diagnoses or healthcare advice. Vitals logged in Lifio or synced via Google Health Connect should not replace professional medical advice. Expense logs entered in Lifio are for personal bookkeeping only and do not constitute financial advice.
-        </p>
-      </section>
-
-      {/* Section 4 */}
-      <section style="margin-bottom: 1.75rem;">
-        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
-          4. User Data Ownership & Backups
-        </h2>
-        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
-          Because Lifio operates offline without cloud synchronization servers, you are solely responsible for managing your device database and making local backups. Uninstalling Lifio or clearing system application storage permanently erases local data.
-        </p>
-      </section>
-
-      {/* Section 5 */}
-      <section>
-        <h2 style="font-size: 1.25rem; margin-bottom: 0.6rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid var(--border-app); padding-bottom: 0.4rem;">
-          5. Support & Inquiries
-        </h2>
-        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.92rem;">
-          For support inquiries, bug reports, or legal questions, please email the developer directly:
-        </p>
-        <div style="margin-top: 0.75rem;">
-          <a href="mailto:imran@idexa.app" style="color: var(--brand-lime); font-weight: 800; text-decoration: none; font-size: 1.05rem;">
-            ✉️ imran@idexa.app
-          </a>
+      {/* Page Header */}
+      <div class="text-center space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E5E2DC] text-xs font-semibold text-[#171717]">
+          <Scale className="w-3.5 h-3.5 text-[#FFBB2C]" />
+          <span class="tracking-wider uppercase text-[11px] font-semibold text-[#5F5C57]">Legal Terms & License</span>
         </div>
-      </section>
+
+        <h1 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight">
+          Terms of Service
+        </h1>
+
+        <p class="text-xs text-[#858174] font-normal">
+          Effective Date: September 17, 2026 • Applies to Lifio Mobile Application for Android
+        </p>
+      </div>
+
+      {/* Main Legal Content Container */}
+      <div class="bg-white rounded-[24px] p-7 sm:p-10 border border-[#E5E2DC] space-y-8 text-sm font-normal text-[#5F5C57] leading-relaxed">
+        
+        {/* Section 1 */}
+        <section class="space-y-2.5">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            1. Acceptance of Terms
+          </h2>
+          <p>
+            By downloading, installing, or using the Lifio mobile application, you agree to be bound by these Terms of Service. Lifio is an intentional, accountless personal tracking application built for offline daily habit, physical wellness, expense, and note organization.
+          </p>
+        </section>
+
+        {/* Section 2 */}
+        <section class="space-y-2.5">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            2. Personal Offline Usage License
+          </h2>
+          <p>
+            Lifio grants you a non-exclusive, non-transferable, personal license to run the application on your personal Android device. Lifio operates 100% locally on your device storage without requiring accounts, logins, or remote cloud subscriptions.
+          </p>
+        </section>
+
+        {/* Section 3 */}
+        <section class="space-y-2.5">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            3. Medical & Financial Disclaimers
+          </h2>
+          <p>
+            Lifio is designed solely for personal self-tracking and routine organization:
+          </p>
+          <ul class="list-disc pl-5 space-y-1.5 pt-1">
+            <li><strong class="font-medium text-[#171717]">Not a Medical Device:</strong> Health vitals (step metrics, sleep logs, resting heart rate, and Google Health Connect readings) are logged for informational self-awareness and do not constitute clinical advice or diagnoses.</li>
+            <li><strong class="font-medium text-[#171717]">Not Financial Advice:</strong> Expense tracking and multi-wallet balance totals are manual bookkeeping records and do not constitute professional accounting, tax, or financial advisory services.</li>
+          </ul>
+        </section>
+
+        {/* Section 4 */}
+        <section class="space-y-2.5">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            4. User Data Ownership & Storage Responsibility
+          </h2>
+          <p>
+            Because Lifio is an offline-first app, your data lives strictly in your local device SQLite sandbox:
+          </p>
+          <ul class="list-disc pl-5 space-y-1.5 pt-1">
+            <li>You own 100% of your notes, habit logs, health entries, and expense records.</li>
+            <li>Lifio does not maintain cloud servers or remote copies of your database. You are encouraged to export local backups as needed.</li>
+            <li>Uninstalling the app or clearing Android app data permanently purges the local database.</li>
+          </ul>
+        </section>
+
+        {/* Section 5 */}
+        <section class="space-y-2.5">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            5. Intellectual Property
+          </h2>
+          <p>
+            All original graphics, interface designs, icons, code, and documentation comprising the Lifio application and official website remain the intellectual property of Lifio and its creators.
+          </p>
+        </section>
+
+        {/* Section 6 */}
+        <section class="pt-4 border-t border-[#E5E2DC] space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717]">
+            6. Contact & Legal Inquiries
+          </h2>
+          <p>
+            For questions regarding these terms, please contact the developer directly:
+          </p>
+          <a 
+            href="mailto:imran@idexa.app" 
+            class="inline-flex items-center gap-2 text-sm font-medium text-[#171717] hover:text-[#FFBB2C] transition-colors"
+          >
+            <Mail className="w-4 h-4 text-[#FFBB2C]" />
+            <span>imran@idexa.app</span>
+          </a>
+        </section>
+
+      </div>
 
     </div>
   </main>
-  
-  <Footer client:idle />
-</Layout>
 
+  <Footer />
+</Layout>

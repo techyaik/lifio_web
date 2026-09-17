@@ -1,26 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  /* Strict Reference Tokens */
+  --color-background: #F0EFEB;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F7F6F2;
+
+  --color-text-primary: #171717;
+  --color-text-secondary: #5F5C57;
+  --color-text-muted: #858174;
+
+  --color-border: #E5E2DC;
+
+  /* Primary Accent: Warm optimistic yellow/orange */
+  --color-primary: #FFBB2C;
+  --color-primary-light: #FFCC57;
+  --color-primary-dark: #E9A51B;
+
+  /* Supporting Muted Earthy Colors */
+  --color-earth: #805044;
+  --color-olive: #8DAF2B;
+  --color-stone: #858174;
+  --color-sand: #D8CBB8;
+  --color-blush: #EBCFC7;
+  --color-lavender: #DCD7F4;
+
+  /* Standard Rounded Radii (Standard Best Practice, not pill) */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+
+  /* Font Family */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  font-family: var(--font-family);
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: var(--font-body);
-  background-color: #FFFFFF;
-  color: #0F172A;
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: #FFFFFF;
-  color: #0F172A;
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+/* Typography Hierarchy */
+.font-display {
+  font-size: 48px;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.font-heading-page {
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 600;
   letter-spacing: -0.025em;
+}
+
+.font-heading-section {
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.font-body {
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+
+.font-supporting {
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.font-meta {
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
