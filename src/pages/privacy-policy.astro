@@ -7,16 +7,17 @@ import {
   HeartPulse, 
   Wallet, 
   FileText, 
-  CalendarCheck, 
-  Check, 
   Mail, 
-  Database
+  Lock,
+  Smartphone,
+  EyeOff,
+  ServerOff
 } from 'lucide-react';
 ---
 
 <Layout 
-  title="Privacy & Data Security Policy | Lifio Mobile App" 
-  description="Lifio Privacy Policy. Learn how your Health vitals, Habits, Expenses, and Personal Notes stay 100% private locally inside your device database."
+  title="Privacy Policy | Lifio — Google Play & App Store Compliant" 
+  description="Official Lifio Privacy Policy. Compliant with Google Play Store and Apple App Store policies. Learn how your health, habits, notes, and finances stay 100% private on your device."
   canonicalURL="https://lifio.app/privacy"
 >
   <Navbar />
@@ -27,335 +28,231 @@ import {
       {/* Page Header */}
       <div class="text-center max-w-2xl mx-auto space-y-3">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E5E2DC] text-xs font-semibold text-[#171717]">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#FFBB2C]" aria-hidden="true" />
-          <span class="tracking-wider uppercase text-[11px] font-semibold text-[#5F5C57]">Local-First Privacy Sanctuary</span>
+          <ShieldCheck class="w-3.5 h-3.5 text-[#8DAF2B]" aria-hidden="true" />
+          <span class="tracking-wider uppercase text-[11px] font-semibold text-[#5F5C57]">Store Policy Compliant</span>
         </div>
 
         <h1 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight leading-tight">
-          Privacy & Data Security Policy
+          Privacy Policy
         </h1>
         
         <p class="text-[#858174] text-xs sm:text-sm font-normal">
-          Effective Date: September 17, 2026 • Applies to Lifio Mobile Application for Android
+          Last Updated: September 18, 2026 • Applies to Lifio for Android (Google Play) & iOS (Apple App Store)
         </p>
       </div>
 
-      {/* Top 4 Privacy Highlight Cards Grid */}
+      {/* Top 4 User Privacy Pillars */}
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        {/* Module 01: Health */}
-        <div class="bg-white p-7 sm:p-8 rounded-[24px] border border-[#E5E2DC] flex flex-col justify-between space-y-5">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-xl bg-[#FEF7E6] flex items-center justify-center text-[#FFBB2C]">
-                <HeartPulse className="w-5 h-5 stroke-[2]" aria-hidden="true" />
-              </div>
-              <span class="text-[11px] font-semibold text-[#5F5C57] bg-[#F0EFEB] border border-[#E5E2DC] px-3 py-1 rounded-lg uppercase tracking-wider">
-                Module 01 • Health
-              </span>
-            </div>
-
-            <h3 class="text-lg font-semibold text-[#171717]">
-              Health Data Privacy
-            </h3>
-
-            <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
-              All steps, heart rate BPM, sleep hours, and vitals stay saved 100% locally on your smartphone with read-only Google Health Connect access.
-            </p>
+        <div class="bg-white p-7 rounded-[24px] border border-[#E5E2DC] space-y-4">
+          <div class="w-11 h-11 rounded-xl bg-[#FEF7E6] text-[#FFBB2C] flex items-center justify-center">
+            <Lock class="w-5 h-5 stroke-[2]" />
           </div>
-
-          <ul class="space-y-2 pt-3 border-t border-[#E5E2DC] text-xs text-[#171717] font-medium">
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>100% device sandbox isolation</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>Read-only Google Health Connect API</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>Zero biometric cloud telemetry</span>
-            </li>
-          </ul>
+          <h2 class="text-base font-semibold text-[#171717]">No Account Required</h2>
+          <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
+            We do not ask for your name, email, phone number, or password. You can start using Lifio immediately after installation with zero sign-ups.
+          </p>
         </div>
 
-        {/* Module 02: Habits */}
-        <div class="bg-white p-7 sm:p-8 rounded-[24px] border border-[#E5E2DC] flex flex-col justify-between space-y-5">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-xl bg-[#FEF7E6] flex items-center justify-center text-[#FFBB2C]">
-                <CalendarCheck className="w-5 h-5 stroke-[2]" aria-hidden="true" />
-              </div>
-              <span class="text-[11px] font-semibold text-[#5F5C57] bg-[#F0EFEB] border border-[#E5E2DC] px-3 py-1 rounded-lg uppercase tracking-wider">
-                Module 02 • Habits
-              </span>
-            </div>
-
-            <h3 class="text-lg font-semibold text-[#171717]">
-              Habits & Streaks Privacy
-            </h3>
-
-            <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
-              Habit routines, daily completion logs, and streak counters are calculated entirely offline without behavioral profiling or tracking servers.
-            </p>
+        <div class="bg-white p-7 rounded-[24px] border border-[#E5E2DC] space-y-4">
+          <div class="w-11 h-11 rounded-xl bg-[#F5F8EF] text-[#8DAF2B] flex items-center justify-center">
+            <Smartphone class="w-5 h-5 stroke-[2]" />
           </div>
-
-          <ul class="space-y-2 pt-3 border-t border-[#E5E2DC] text-xs text-[#171717] font-medium">
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>Local Android alarm notifications</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>Zero behavioral profiling servers</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>100% offline streak calculations</span>
-            </li>
-          </ul>
+          <h2 class="text-base font-semibold text-[#171717]">100% On-Device Storage</h2>
+          <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
+            Your health numbers, daily habits, personal journal, and spending records remain stored strictly on your phone’s local storage.
+          </p>
         </div>
 
-        {/* Module 03: Notes */}
-        <div class="bg-white p-7 sm:p-8 rounded-[24px] border border-[#E5E2DC] flex flex-col justify-between space-y-5">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-xl bg-[#FEF7E6] flex items-center justify-center text-[#FFBB2C]">
-                <FileText className="w-5 h-5 stroke-[2]" aria-hidden="true" />
-              </div>
-              <span class="text-[11px] font-semibold text-[#5F5C57] bg-[#F0EFEB] border border-[#E5E2DC] px-3 py-1 rounded-lg uppercase tracking-wider">
-                Module 03 • Notes
-              </span>
-            </div>
-
-            <h3 class="text-lg font-semibold text-[#171717]">
-              Personal Notes Privacy
-            </h3>
-
-            <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
-              Reflections, ideas, and checklists are stored in your encrypted local database sandbox. Zero cloud scrapers or AI model training.
-            </p>
+        <div class="bg-white p-7 rounded-[24px] border border-[#E5E2DC] space-y-4">
+          <div class="w-11 h-11 rounded-xl bg-[#FAF5F7] text-[#805044] flex items-center justify-center">
+            <ServerOff class="w-5 h-5 stroke-[2]" />
           </div>
-
-          <ul class="space-y-2 pt-3 border-t border-[#E5E2DC] text-xs text-[#171717] font-medium">
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>Fast local keyword search in memory</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>Zero AI cloud scraping or training</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>Encrypted device SQLite storage</span>
-            </li>
-          </ul>
+          <h2 class="text-base font-semibold text-[#171717]">Zero Ads & Zero Tracking</h2>
+          <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
+            We embed no advertising frameworks, no marketing trackers, and no third-party data analytics SDKs. We do not track you across apps.
+          </p>
         </div>
 
-        {/* Module 04: Expenses */}
-        <div class="bg-white p-7 sm:p-8 rounded-[24px] border border-[#E5E2DC] flex flex-col justify-between space-y-5">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-xl bg-[#FEF7E6] flex items-center justify-center text-[#FFBB2C]">
-                <Wallet className="w-5 h-5 stroke-[2]" aria-hidden="true" />
-              </div>
-              <span class="text-[11px] font-semibold text-[#5F5C57] bg-[#F0EFEB] border border-[#E5E2DC] px-3 py-1 rounded-lg uppercase tracking-wider">
-                Module 04 • Expenses
-              </span>
-            </div>
-
-            <h3 class="text-lg font-semibold text-[#171717]">
-              Expense & Wallet Privacy
-            </h3>
-
-            <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
-              Balances are hidden by default. Lifio requires zero bank logins, zero card details, and zero third-party finance aggregators.
-            </p>
+        <div class="bg-white p-7 rounded-[24px] border border-[#E5E2DC] space-y-4">
+          <div class="w-11 h-11 rounded-xl bg-[#F7F5FA] text-[#DCD7F4] flex items-center justify-center">
+            <EyeOff class="w-5 h-5 text-[#858174] stroke-[2]" />
           </div>
-
-          <ul class="space-y-2 pt-3 border-t border-[#E5E2DC] text-xs text-[#171717] font-medium">
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>Hidden balance privacy mode active</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>Zero bank credentials or card logins</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="w-3.5 h-3.5 text-[#FFBB2C] stroke-[2.5]" aria-hidden="true" />
-              <span>100% offline transaction records</span>
-            </li>
-          </ul>
+          <h2 class="text-base font-semibold text-[#171717]">You Own All Your Data</h2>
+          <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
+            Because we do not store your data on external servers, you have full ownership. You can delete individual items or erase everything anytime.
+          </p>
         </div>
 
       </div>
 
-      {/* Detailed Full Legal Text Container in Pure White */}
-      <div class="bg-white rounded-[24px] border border-[#E5E2DC] p-7 sm:p-12 space-y-8 max-w-4xl mx-auto">
+      {/* Comprehensive Store Compliance Legal Document */}
+      <div class="bg-white rounded-[24px] border border-[#E5E2DC] p-7 sm:p-12 space-y-9 text-sm font-normal text-[#5F5C57] leading-relaxed">
         
-        {/* Section 1: Expense Tracker */}
-        <section>
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] mb-3 pb-2 border-b border-[#E5E2DC] flex items-center gap-2">
-            <Wallet className="w-4 h-4 text-[#FFBB2C]" aria-hidden="true" />
-            <span>1. Expense Tracker & Wallet Data Privacy</span>
+        {/* Section 1: Overview & Developer Identity */}
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            1. Introduction & Publisher Identity
           </h2>
-          <p class="text-[#5F5C57] leading-relaxed text-sm mb-3 font-normal">
-            Lifio includes a personal <strong class="font-medium text-[#171717]">Expense Tracker (Wallet)</strong> designed for private daily transaction logging. Here is how your financial privacy is protected:
+          <p>
+            This Privacy Policy governs the mobile application <strong class="text-[#171717] font-medium">Lifio</strong> ("Application", "App", "we", "our", or "us"), created and maintained by <strong class="text-[#171717] font-medium">Imran / Idexa</strong>. This document explains how Lifio handles user information and demonstrates our compliance with the <strong class="text-[#171717] font-medium">Google Play Developer Policy (including Health Connect Policies)</strong> and the <strong class="text-[#171717] font-medium">Apple App Store Review Guidelines (including Section 5.1 on Privacy and Data Use)</strong>.
           </p>
-          <ul class="space-y-2.5 text-[#5F5C57] text-sm pl-1 font-normal">
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Zero Bank Connectivity:</strong> Lifio does not connect to Open Banking APIs, credit card accounts, or bank credentials.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Private Balance Mode:</strong> Your total balance and spending amounts are hidden for privacy by default.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Manual Account Logging:</strong> Multi-account tags and category tags exist purely inside local app database files.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">No Financial Telemetry:</strong> We cannot see, track, transmit, or sell your spending patterns or financial transactions.</span>
-            </li>
-          </ul>
+          <p>
+            Lifio is designed as an <strong class="text-[#171717] font-medium">offline-first, privacy-respecting personal tracker</strong>. We do not require registration, we operate no user-tracking cloud servers, and we never sell, monetize, or disclose your personal data.
+          </p>
         </section>
 
-        {/* Section 2: Health & Fitness */}
-        <section>
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] mb-3 pb-2 border-b border-[#E5E2DC] flex items-center gap-2">
-            <HeartPulse className="w-4 h-4 text-[#FFBB2C]" aria-hidden="true" />
-            <span>2. Health & Fitness Data Privacy</span>
+        {/* Section 2: Permissions & Information Collected */}
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            2. Information Collected & Platform Permissions
           </h2>
-          <p class="text-[#5F5C57] leading-relaxed text-sm mb-3 font-normal">
-            Lifio’s <strong class="font-medium text-[#171717]">Track Your Health</strong> module acts as a completely private, offline logbook for all your physical wellness metrics:
-          </p>
-          <ul class="space-y-2.5 text-[#5F5C57] text-sm pl-1 font-normal">
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Movement & Activity Vitals:</strong> Daily steps, active distance, calories burned, and activity minutes stay stored strictly inside your local database sandbox.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Rest & Sleep Analysis:</strong> Sleep duration tracking and stage breakdowns stay 100% offline on device memory.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Read-Only Google Health Connect:</strong> Lifio reads health data directly on your device via Android native APIs without ever uploading to an external server.</span>
-            </li>
-          </ul>
-        </section>
-
-        {/* Section 3: Habits */}
-        <section>
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] mb-3 pb-2 border-b border-[#E5E2DC] flex items-center gap-2">
-            <CalendarCheck className="w-4 h-4 text-[#FFBB2C]" aria-hidden="true" />
-            <span>3. Habits Checklists & Streak Data Privacy</span>
-          </h2>
-          <p class="text-[#5F5C57] leading-relaxed text-sm mb-3 font-normal">
-            Lifio’s <strong class="font-medium text-[#171717]">Build Better Habits</strong> module empowers you to build routines with complete peace of mind:
-          </p>
-          <ul class="space-y-2.5 text-[#5F5C57] text-sm pl-1 font-normal">
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Local Habit Database:</strong> Daily routines, custom names, target frequency, and check-offs are stored exclusively in your device database.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Offline Streak Calculation:</strong> Streak counters and milestone rings are calculated on-device without telemetry.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Local Android Alarms:</strong> Custom habit reminders schedule through local Android system alarms. No external push messaging servers access your habits.</span>
-            </li>
-          </ul>
-        </section>
-
-        {/* Section 4: Notes */}
-        <section>
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] mb-3 pb-2 border-b border-[#E5E2DC] flex items-center gap-2">
-            <FileText className="w-4 h-4 text-[#FFBB2C]" aria-hidden="true" />
-            <span>4. Personal Notes & Thought Organization</span>
-          </h2>
-          <p class="text-[#5F5C57] leading-relaxed text-sm mb-3 font-normal">
-            Lifio’s <strong class="font-medium text-[#171717]">Capture Your Notes</strong> module provides a fast, offline notepad for your thoughts and ideas:
-          </p>
-          <ul class="space-y-2.5 text-[#5F5C57] text-sm pl-1 font-normal">
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Encrypted Device Sandbox:</strong> Note titles, body text, tags, and pinned items reside directly inside your app sandbox storage.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Zero AI Cloud Scraping:</strong> Your private notes are never uploaded to cloud servers or AI model trainers.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Fast Offline Keyword Search:</strong> Keyword searching across your notes operates entirely within local phone memory.</span>
-            </li>
-          </ul>
-        </section>
-
-        {/* Section 5: Zero Account & Full Control */}
-        <section>
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] mb-3 pb-2 border-b border-[#E5E2DC] flex items-center gap-2">
-            <Database className="w-4 h-4 text-[#FFBB2C]" aria-hidden="true" />
-            <span>5. Zero Account & Full Data Control</span>
-          </h2>
-          <p class="text-[#5F5C57] leading-relaxed text-sm mb-3 font-normal">
-            Lifio is built on an <strong class="font-medium text-[#171717]">accountless, local-first architecture</strong>. You retain absolute ownership:
-          </p>
-          <ul class="space-y-2.5 text-[#5F5C57] text-sm pl-1 font-normal">
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">No Registration:</strong> Lifio never asks for email, phone number, or password. Launch the app and start tracking immediately.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Zero Tracking SDKs:</strong> Lifio does not embed advertising SDKs (no Google AdMob, Meta Ads) or behavior trackers.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-[#FFBB2C] stroke-[2.5] flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span><strong class="font-medium text-[#171717]">Instant Permanent Deletion:</strong> Uninstalling the app instantly purges 100% of your database records with zero cloud traces.</span>
-            </li>
-          </ul>
-        </section>
-
-        {/* Section 6: Contact Information */}
-        <section class="pt-6 border-t border-[#E5E2DC]">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] mb-3">
-            6. Direct Developer Support & Transparency
-          </h2>
-          <p class="text-[#5F5C57] leading-relaxed text-sm mb-5 font-normal">
-            If you have questions regarding offline data security, bug reports, or feature suggestions:
+          <p>
+            Lifio only requests system permissions that are strictly necessary to deliver core personal tracking functionality. All information collected remains solely on your device:
           </p>
 
-          <div class="p-6 sm:p-8 bg-[#F0EFEB] rounded-[20px] border border-[#E5E2DC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div class="space-y-1">
-              <span class="text-[10px] font-medium tracking-wider text-[#858174] uppercase block">
-                Official Developer Support Contact
-              </span>
-              <a 
-                href="mailto:imran@idexa.app" 
-                class="text-base sm:text-lg font-semibold text-[#171717] hover:text-[#FFBB2C] transition-colors inline-flex items-center gap-2"
-              >
-                <Mail className="w-4 h-4 text-[#FFBB2C]" aria-hidden="true" />
-                <span>imran@idexa.app</span>
-              </a>
-              <p class="text-[#858174] text-xs font-normal">
-                Guaranteed personal response within 24 to 48 business hours.
+          <div class="space-y-3 pt-2">
+            <div class="p-4 rounded-xl bg-[#FAF9F7] border border-[#E5E2DC] space-y-1.5">
+              <h3 class="font-semibold text-[#171717] text-sm flex items-center gap-2">
+                <HeartPulse class="w-4 h-4 text-[#8DAF2B]" />
+                <span>A. Health & Fitness Data (Google Health Connect & Apple Health)</span>
+              </h3>
+              <p class="text-xs sm:text-sm text-[#5F5C57]">
+                With your explicit runtime consent, Lifio requests read-only permission to access physical wellness metrics:
+              </p>
+              <ul class="list-disc pl-5 text-xs sm:text-sm space-y-1 text-[#5F5C57]">
+                <li><strong class="text-[#171717] font-medium">Daily Steps & Active Minutes:</strong> Used to display your daily physical movement.</li>
+                <li><strong class="text-[#171717] font-medium">Resting Heart Rate:</strong> Used to display resting BPM trends.</li>
+                <li><strong class="text-[#171717] font-medium">Sleep Sessions:</strong> Used to show sleep duration and rest quality.</li>
+              </ul>
+              <div class="mt-2 p-3 rounded-lg bg-white border border-[#E5E2DC] text-xs text-[#171717] font-medium">
+                <strong>Important Compliance Statement:</strong> In strict adherence to Google Health Connect Policy and Apple HealthKit Guidelines, Lifio <u>never</u> transfers, shares, sells, or licenses Health Connect or HealthKit data to third parties, advertising networks, data brokers, or information aggregators. Health data is never used for marketing, automated profiling, or machine learning/AI model training.
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-[#FAF9F7] border border-[#E5E2DC] space-y-1.5">
+              <h3 class="font-semibold text-[#171717] text-sm flex items-center gap-2">
+                <Wallet class="w-4 h-4 text-[#805044]" />
+                <span>B. Expense & Budget Records</span>
+              </h3>
+              <p class="text-xs sm:text-sm text-[#5F5C57]">
+                Any expense entries, wallet balances, or spending categories are entered manually by you. Lifio does not integrate with Plaid, Open Banking, or banking institutions, and never asks for your bank login credentials, credit card numbers, or bank account details.
               </p>
             </div>
-            
+
+            <div class="p-4 rounded-xl bg-[#FAF9F7] border border-[#E5E2DC] space-y-1.5">
+              <h3 class="font-semibold text-[#171717] text-sm flex items-center gap-2">
+                <FileText class="w-4 h-4 text-[#DCD7F4]" />
+                <span>C. Notes, Reflections & Habit Streaks</span>
+              </h3>
+              <p class="text-xs sm:text-sm text-[#5F5C57]">
+                Your morning thoughts, habit checklists, reminder times, and to-do notes are stored locally in your phone’s SQLite database. They are never uploaded to remote servers or analyzed by external generative AI engines.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3: Third-Party SDKs & Cross-App Tracking */}
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            3. Third-Party Services, SDKs & Tracking
+          </h2>
+          <p>
+            Lifio is committed to zero tracking:
+          </p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li><strong class="text-[#171717] font-medium">No Advertising SDKs:</strong> Lifio does not embed Google AdMob, Meta Audience Network, Unity Ads, AppLovin, or any commercial advertising libraries.</li>
+            <li><strong class="text-[#171717] font-medium">No Behavioral Tracking SDKs:</strong> We do not integrate Firebase Analytics, Mixpanel, Adjust, AppsFlyer, or Flurry.</li>
+            <li><strong class="text-[#171717] font-medium">No Cross-App Tracking:</strong> In compliance with Apple’s App Tracking Transparency (ATT) framework, Lifio does not track you across other companies’ apps or websites.</li>
+          </ul>
+        </section>
+
+        {/* Section 4: Data Retention, Storage & Deletion */}
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            4. Data Retention, Storage & Deletion (Google Play & Apple Compliance)
+          </h2>
+          <p>
+            Because Lifio operates without user accounts or central databases, all personal data is stored exclusively in your device’s local sandboxed application directory:
+          </p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li><strong class="text-[#171717] font-medium">Deleting Specific Entries:</strong> You can delete any note, habit, expense record, or health log directly inside the app interface at any time.</li>
+            <li><strong class="text-[#171717] font-medium">Permanent Complete Erasure:</strong> To permanently delete all stored data from your device, simply go to your device <code class="px-1.5 py-0.5 rounded bg-[#FAF9F7] border border-[#E5E2DC] text-xs text-[#171717]">Settings &gt; Apps &gt; Lifio &gt; Clear Storage / Clear Data</code>, or uninstall the application. Once cleared or uninstalled, 100% of your records are permanently and irreversibly wiped.</li>
+            <li><strong class="text-[#171717] font-medium">Account Deletion Exemption:</strong> In accordance with Google Play and Apple App Store account deletion guidelines, Lifio does not support an in-app account deletion link or web portal deletion request because Lifio creates no accounts and collects no remote user profiles.</li>
+          </ul>
+        </section>
+
+        {/* Section 5: Children's Online Privacy Protection */}
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            5. Children’s Privacy (COPPA & GDPR-K Compliance)
+          </h2>
+          <p>
+            Lifio is designed for the general public and is not targeted toward children under 13 years of age (or under 16 in the European Economic Area / UK). We do not knowingly collect, request, or solicit personal information from children. If you believe that a child has provided personal information to us, please contact us at <a href="mailto:imran@idexa.app" class="text-[#171717] font-semibold hover:underline">imran@idexa.app</a>.
+          </p>
+        </section>
+
+        {/* Section 6: International Privacy Rights (GDPR & CCPA/CPRA) */}
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            6. International Privacy Rights (GDPR & California CCPA/CPRA)
+          </h2>
+          <p>
+            Under European (GDPR/UK-GDPR) and California (CCPA/CPRA) privacy regulations, users have statutory rights regarding their personal data:
+          </p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li><strong class="text-[#171717] font-medium">Right of Access & Portability:</strong> All your data resides locally on your personal device and can be viewed or exported directly through the app.</li>
+            <li><strong class="text-[#171717] font-medium">Right to Erasure:</strong> You can purge all records at any time by clearing application data or deleting the application.</li>
+            <li><strong class="text-[#171717] font-medium">Sale of Personal Data:</strong> We do not sell, rent, or share personal data with any third parties for monetary or other valuable consideration.</li>
+          </ul>
+        </section>
+
+        {/* Section 7: Security Measures */}
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            7. Security Standards
+          </h2>
+          <p>
+            Your data is protected by the native hardware and operating system encryption of Android and iOS. Because your records never leave your physical device to traverse the public internet or external cloud servers, your information is protected from remote server breaches, external credential leaks, and unauthorized database access.
+          </p>
+        </section>
+
+        {/* Section 8: Changes to this Policy */}
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
+            8. Changes to This Privacy Policy
+          </h2>
+          <p>
+            We may update this Privacy Policy occasionally to reflect updates to operating system standards or regulatory compliance requirements. Any revisions will be published on this webpage with a revised "Last Updated" date. Continued use of Lifio after any revisions indicates your acknowledgment of the updated policy.
+          </p>
+        </section>
+
+        {/* Section 9: Contact Information */}
+        <section class="pt-6 border-t border-[#E5E2DC] space-y-3">
+          <h2 class="text-base sm:text-lg font-semibold text-[#171717]">
+            9. Contact Information & Developer Inquiries
+          </h2>
+          <p>
+            If you have questions, inquiries, or feedback regarding this Privacy Policy or the security of the Lifio application, please contact the developer directly:
+          </p>
+
+          <div class="p-5 rounded-2xl bg-[#FAF9F7] border border-[#E5E2DC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="space-y-1">
+              <span class="text-[11px] font-medium uppercase tracking-wider text-[#858174]">Official Privacy Contact</span>
+              <a 
+                href="mailto:imran@idexa.app" 
+                class="text-base sm:text-lg font-semibold text-[#171717] hover:text-[#FFBB2C] transition-colors flex items-center gap-2"
+              >
+                <Mail class="w-4 h-4 text-[#FFBB2C]" />
+                <span>imran@idexa.app</span>
+              </a>
+              <p class="text-xs text-[#858174]">Developer: Imran • Organization: Idexa</p>
+            </div>
             <a 
               href="mailto:imran@idexa.app"
-              class="inline-flex items-center justify-center bg-[#FFBB2C] hover:bg-[#f0ad24] text-[#171717] font-semibold px-5 py-2.5 rounded-xl text-xs transition-all shadow-sm"
+              class="inline-flex items-center justify-center bg-[#FFBB2C] hover:bg-[#f0ad24] text-[#171717] font-semibold px-5 py-2.5 rounded-xl text-xs transition-all shadow-sm flex-shrink-0"
             >
-              Send Email
+              Contact Developer
             </a>
           </div>
         </section>
