@@ -12,7 +12,7 @@ export interface Props {
 const {
   title = "Lifio — Master your day, health, and wealth in one calm place",
   description = "A quiet, 100% offline personal tracker for Android. Manage physical wellness via Health Connect, habit streaks, mindful thoughts, and multi-wallet budgets with zero account requirements.",
-  image = "/lifio-icon.png",
+  image = "/favicon.png",
   canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://lifio.app').href,
   noindex = false,
 } = Astro.props;
@@ -78,8 +78,8 @@ const schemaData = {
     <link rel="canonical" href={canonicalURL} />
 
     {/* Favicon & App Icons */}
-    <link rel="icon" type="image/png" href="/lifio-icon.png" />
-    <link rel="apple-touch-icon" href="/lifio-icon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
 
     {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />
