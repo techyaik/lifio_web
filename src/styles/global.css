@@ -1,162 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=Caveat:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap');
+@import "tailwindcss";
 
 :root {
-  /* Lifio Sleek Dark Forest Palette (Matched to User Reference) */
-  --bg-app: #08120C;         /* Deep charcoal forest background */
-  --bg-app-alt: #0D1912;     /* Alternate dark section background */
-  --bg-card: #0D1C14;        /* Elevated dark forest card surface */
-  --bg-card-hover: #12251B;  /* Card hover state */
-
-  --text-main: #FFFFFF;      /* High contrast crisp white headings */
-  --text-muted: #94A89C;     /* Muted green-silver body text */
-  --text-subtle: #647B6F;    /* Subtle hint text */
-
-  --brand-emerald: #10B981;  /* Vibrant emerald green */
-  --brand-lime: #70E0A3;     /* Neon Mint/Lime Green accent */
-  --brand-gold: #F5D06A;     /* Warm gold accent */
-  --brand-blue: #B4CEFF;     /* Ice blue accent */
-
-  /* Feature Module Badge Tokens */
-  --color-health-bg: rgba(112, 224, 163, 0.12);
-  --color-health-border: rgba(112, 224, 163, 0.3);
-  --color-health-text: #70E0A3;
-
-  --color-habits-bg: rgba(112, 224, 163, 0.12);
-  --color-habits-border: rgba(112, 224, 163, 0.3);
-  --color-habits-text: #70E0A3;
-
-  --color-wallet-bg: rgba(245, 208, 106, 0.12);
-  --color-wallet-border: rgba(245, 208, 106, 0.3);
-  --color-wallet-text: #F5D06A;
-
-  --color-notes-bg: rgba(180, 206, 255, 0.12);
-  --color-notes-border: rgba(180, 206, 255, 0.3);
-  --color-notes-text: #B4CEFF;
-
-  --border-app: rgba(255, 255, 255, 0.08);
-  --border-light: rgba(255, 255, 255, 0.05);
-
   --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-handwriting: 'Caveat', cursive;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-app);
+  font-family: var(--font-body);
+  background-color: #FFFFFF;
+  color: #0F172A;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-app);
-  color: var(--text-main);
-  line-height: 1.55;
+  background-color: #FFFFFF;
+  color: #0F172A;
   -webkit-font-smoothing: antialiased;
-  /* Dot Matrix Grid Overlay matched to attached reference */
-  background-image: radial-gradient(rgba(112, 224, 163, 0.1) 1.2px, transparent 1.2px);
-  background-size: 24px 24px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--text-main);
   letter-spacing: -0.025em;
-  font-weight: 700;
 }
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-  }
-}
-
-.handwriting {
-  font-family: var(--font-handwriting);
-  font-size: 1.35rem;
-  color: var(--brand-lime);
-}
-
-.nav-item {
-  color: var(--text-muted);
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  padding: 0.4rem 0.75rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.nav-item:hover {
-  color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.06);
-}
-
-/* Features Grid: 2x2 Grid on Desktop/Tablet, 1-col on Mobile */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-}
-
-@media (max-width: 767px) {
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-/* Sharp Executive Feature Card matching attached 90° right-angle corner reference */
-.feature-card {
-  background-color: var(--bg-card);
-  border-radius: 0px; /* Crisp sharp 90-degree right-angle corner */
-  padding: 1.65rem;
-  border: 1px solid var(--border-app);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
-  transition: all 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.feature-card:hover {
-  transform: translateY(-3px);
-  background-color: var(--bg-card-hover);
-  border-color: rgba(112, 224, 163, 0.35);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
-}
-
-/* Sharp Inset Frame for Screenshots & Media */
-.sharp-inset-box {
-  margin-top: auto;
-  border-radius: 0px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-  background-color: #070E0A;
-  height: 215px;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .feature-card {
-    padding: 1.3rem;
-  }
-}
-
-
-
-
-

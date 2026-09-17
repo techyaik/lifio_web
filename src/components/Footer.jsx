@@ -25,9 +25,11 @@ const Footer = () => {
           <div style={{ maxWidth: '340px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1rem' }}>
               <img 
-                src={lifioIcon.src} 
-                alt="Lifio Icon" 
-                style={{ width: '32px', height: '32px', borderRadius: '0px' }} 
+                src={lifioIcon.src || "/lifio-icon.png"} 
+                alt="Lifio App Icon" 
+                width={32}
+                height={32}
+                style={{ width: '32px', height: '32px', borderRadius: '10px' }} 
               />
               <span style={{ fontSize: '1.6rem', fontWeight: '800', color: '#FFFFFF', letterSpacing: '-0.03em', fontFamily: 'var(--font-heading)' }}>
                 lifio<span style={{ color: 'var(--brand-lime)' }}>.</span>

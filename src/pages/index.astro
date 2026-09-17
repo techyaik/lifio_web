@@ -1,30 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.jsx';
-import Hero from '../components/Hero.jsx';
-import Features from '../components/Features.jsx';
-import ScreenshotsSection from '../components/ScreenshotsSection.jsx';
-import HealthConnectSection from '../components/HealthConnectSection.jsx';
-import PrivacyPolicy from '../components/PrivacyPolicy.jsx';
-import FAQ from '../components/FAQ.jsx';
-import AppShowcase from '../components/AppShowcase.jsx';
-import Footer from '../components/Footer.jsx';
+import Navbar from '../components/Navbar.tsx';
+import Hero from '../components/Hero.tsx';
+import FeatureGrid from '../components/FeatureGrid.tsx';
+import WhyChooseUs from '../components/WhyChooseUs.tsx';
+import PrivacySecurity from '../components/PrivacySecurity.tsx';
+import Footer from '../components/Footer.tsx';
 ---
 
 <Layout 
-  title="Lifio | Offline Health, Habits, Wallet & Notes Tracker" 
-  description="Lifio is an offline personal tracking app for Android. Track your health vitals, habit streaks, wallet expenses, and personal notes with 100% local storage."
+  title="lifio - Master your day, your health, and your wealth in one place" 
+  description="All-in-one personal tracking mobile app. Track daily vitals, log spending, write journal notes, and build habit streaks with 100% local privacy."
 >
   <Navbar client:load />
+  
   <main>
     <Hero client:load />
-    <Features client:visible />
-    <ScreenshotsSection client:visible />
-    <HealthConnectSection client:visible />
-    <PrivacyPolicy client:visible />
-    <FAQ client:visible />
-    <AppShowcase client:visible />
+    <FeatureGrid client:visible />
+    <WhyChooseUs client:visible />
+    <PrivacySecurity client:visible />
   </main>
-  <Footer />
+  
+  <Footer client:idle />
 </Layout>
-

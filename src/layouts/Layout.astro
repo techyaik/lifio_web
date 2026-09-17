@@ -2,28 +2,30 @@
 import '../styles/global.css';
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
-const { title, description } = Astro.props;
+const { 
+  title = "lifio - Master your day, your health, and your wealth in one place", 
+  description = "All-in-one personal tracking mobile app. Track daily health vitals, log spending expenses, organize journal notes, and build habit streaks with 100% offline privacy." 
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content={description} />
-  <title>{title}</title>
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
-</head>
-<body>
-  <div class="blob-bg-top-right"></div>
-  <div class="blob-bg-center"></div>
-  <slot />
-</body>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/lifio-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="bg-white text-slate-900 antialiased selection:bg-slate-900 selection:text-white">
+    <slot />
+  </body>
 </html>

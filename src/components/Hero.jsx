@@ -92,19 +92,19 @@ const Hero = () => {
           {/* Right Column: Clean App Feature Mockup */}
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div style={{
-              borderRadius: '0px',
+              borderRadius: '24px',
               overflow: 'hidden',
               boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1)',
               background: 'var(--bg-card)',
               padding: '6px'
             }}>
               <img 
-                src={featuredGraphic.src} 
+                src="/hero.jpeg" 
                 alt="Lifio Mobile App - Health, Habits, Finances, Notes" 
                 style={{ 
                   width: '100%', 
-                  maxWidth: '600px', 
-                  borderRadius: '0px', 
+                  maxWidth: '440px', 
+                  borderRadius: '18px', 
                   display: 'block',
                   objectFit: 'cover'
                 }} 
