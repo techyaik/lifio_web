@@ -11,36 +11,36 @@ import FloatingSparkleClipart from './illustrations/FloatingSparkleClipart.astro
 <section id="overview" class="relative pt-16 pb-24 sm:pt-24 sm:pb-36 overflow-hidden bg-[#F0EFEB]">
   
   {/* Ambient Background Glow Layers */}
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[400px] bg-[#FFBB2C]/20 rounded-full blur-[130px] pointer-events-none -z-10" />
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[400px] bg-[#FFBB2C]/20 rounded-full blur-[130px] pointer-events-none -z-10 animate-glow-pulse" />
   <div class="absolute top-12 right-6 sm:right-24 w-[300px] h-[300px] bg-[#DCD7F4]/30 rounded-full blur-[100px] pointer-events-none -z-10" />
   <div class="absolute bottom-10 left-6 sm:left-20 w-[320px] h-[320px] bg-[#EBCFC7]/35 rounded-full blur-[110px] pointer-events-none -z-10" />
 
-  {/* Whimsical Floating Clipart Illustrations in BG */}
-  <div class="absolute top-10 left-6 sm:left-16 pointer-events-none select-none opacity-85 -rotate-12 transition-transform hover:rotate-0">
+  {/* Whimsical Floating Clipart Illustrations in BG with smooth animations */}
+  <div class="absolute top-10 left-6 sm:left-16 pointer-events-none select-none opacity-85 animate-float-moon">
     <FloatingMoonClipart class="w-12 h-12 sm:w-16 sm:h-16" />
   </div>
 
-  <div class="absolute top-12 right-8 sm:right-20 pointer-events-none select-none opacity-90 rotate-12 transition-transform hover:rotate-0">
+  <div class="absolute top-12 right-8 sm:right-20 pointer-events-none select-none opacity-90 animate-float-sun">
     <FloatingSunClipart class="w-14 h-14 sm:w-20 sm:h-20" />
   </div>
 
-  <div class="absolute top-1/3 left-4 sm:left-10 pointer-events-none select-none opacity-70">
+  <div class="absolute top-1/3 left-4 sm:left-10 pointer-events-none select-none opacity-70 animate-sparkle-1">
     <FloatingSparkleClipart class="w-6 h-6 sm:w-8 sm:h-8" color="#FFBB2C" />
   </div>
 
-  <div class="absolute top-1/3 right-6 sm:right-14 pointer-events-none select-none opacity-75">
+  <div class="absolute top-1/3 right-6 sm:right-14 pointer-events-none select-none opacity-75 animate-float-cloud">
     <FloatingCloudClipart class="w-16 h-10 sm:w-24 sm:h-14" />
   </div>
 
-  <div class="absolute bottom-16 left-8 sm:left-24 pointer-events-none select-none opacity-85 rotate-6">
+  <div class="absolute bottom-16 left-8 sm:left-24 pointer-events-none select-none opacity-85 animate-float-sprout">
     <FloatingSproutClipart class="w-12 h-12 sm:w-16 sm:h-16" />
   </div>
 
-  <div class="absolute bottom-14 right-10 sm:right-28 pointer-events-none select-none opacity-80 -rotate-6">
+  <div class="absolute bottom-14 right-10 sm:right-28 pointer-events-none select-none opacity-80 animate-float-heart">
     <FloatingHeartClipart class="w-10 h-10 sm:w-14 sm:h-14" />
   </div>
 
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none select-none opacity-60">
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none select-none opacity-60 animate-sparkle-2">
     <FloatingSparkleClipart class="w-5 h-5 sm:w-7 sm:h-7" color="#8DAF2B" />
   </div>
 
@@ -62,7 +62,7 @@ import FloatingSparkleClipart from './illustrations/FloatingSparkleClipart.astro
 
     {/* Body Description */}
     <p class="text-base sm:text-xl text-[#5F5C57] font-normal leading-relaxed max-w-2xl mx-auto">
-      A quiet, mindful Android companion for your daily wellness vitals, habit consistency, personal reflections, and expense budgets. Zero accounts, zero ads, and zero cloud tracking.
+      A calm, simple Android app for your health, positive habits, personal journal, and daily expenses. No signups, no ads, and 100% private to your phone.
     </p>
 
     {/* CTA Buttons (Standard Rounded, No Pill, No Clunky Play Store Icon) */}
@@ -85,34 +85,156 @@ import FloatingSparkleClipart from './illustrations/FloatingSparkleClipart.astro
         href="#features"
         class="inline-flex items-center justify-center gap-2 bg-[#FFFFFF] hover:bg-[#FAF9F7] active:scale-[0.98] text-[#171717] font-semibold h-13 px-7 rounded-xl text-base border border-[#E5E2DC] shadow-sm transition-all w-full sm:w-auto"
       >
-        <span>Explore 6 Features</span>
+        <span>Explore Features</span>
         <svg class="w-4 h-4 text-[#858174]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </a>
     </div>
 
-    {/* Quiet Trust Footnotes */}
+    {/* Friendly Trust Highlights */}
     <div class="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-[#858174] font-medium">
       <span class="flex items-center gap-1.5">
         <svg class="w-4 h-4 text-[#8DAF2B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
         </svg>
-        Zero Account Required
+        No Account Needed
       </span>
       <span class="flex items-center gap-1.5">
         <svg class="w-4 h-4 text-[#8DAF2B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
-        Local SQLite Sandbox
+        100% Private to You
       </span>
       <span class="flex items-center gap-1.5">
         <svg class="w-4 h-4 text-[#805044]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
-        Google Health Connect
+        Works Fully Offline
       </span>
     </div>
 
   </div>
 </section>
+
+<style>
+  @keyframes float-moon {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(-12deg);
+    }
+    50% {
+      transform: translate3d(4px, -14px, 0) rotate(-6deg);
+    }
+  }
+
+  @keyframes float-sun {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(12deg) scale(1);
+    }
+    50% {
+      transform: translate3d(-6px, -12px, 0) rotate(18deg) scale(1.04);
+    }
+  }
+
+  @keyframes float-cloud {
+    0%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(8px, -10px, 0);
+    }
+  }
+
+  @keyframes float-sprout {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(6deg);
+    }
+    50% {
+      transform: translate3d(5px, -10px, 0) rotate(12deg);
+    }
+  }
+
+  @keyframes float-heart {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(-6deg) scale(1);
+    }
+    50% {
+      transform: translate3d(-5px, -12px, 0) rotate(0deg) scale(1.06);
+    }
+  }
+
+  @keyframes sparkle-twinkle {
+    0%, 100% {
+      transform: scale(0.85) rotate(0deg);
+      opacity: 0.55;
+    }
+    50% {
+      transform: scale(1.2) rotate(45deg);
+      opacity: 0.95;
+    }
+  }
+
+  @keyframes glow-breath {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.20;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.12);
+      opacity: 0.28;
+    }
+  }
+
+  .animate-float-moon {
+    animation: float-moon 6.5s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-float-sun {
+    animation: float-sun 7.5s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-float-cloud {
+    animation: float-cloud 8.5s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-float-sprout {
+    animation: float-sprout 6.8s ease-in-out infinite 0.6s;
+    will-change: transform;
+  }
+
+  .animate-float-heart {
+    animation: float-heart 6s ease-in-out infinite 1.2s;
+    will-change: transform;
+  }
+
+  .animate-sparkle-1 {
+    animation: sparkle-twinkle 4s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  .animate-sparkle-2 {
+    animation: sparkle-twinkle 4.6s ease-in-out infinite 1.8s;
+    will-change: transform, opacity;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-breath 8s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float-moon,
+    .animate-float-sun,
+    .animate-float-cloud,
+    .animate-float-sprout,
+    .animate-float-heart,
+    .animate-sparkle-1,
+    .animate-sparkle-2,
+    .animate-glow-pulse {
+      animation: none !important;
+    }
+  }
+</style>

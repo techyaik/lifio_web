@@ -10,33 +10,33 @@ interface ComparisonItem {
 
 const comparisonItems: ComparisonItem[] = [
   {
-    feature: 'App Storage & Disk Space',
-    separate: '4 separate apps (400 MB+ total)',
-    lifio: '1 ultra-light unified app (< 25 MB)',
+    feature: 'Storage & Space',
+    separate: '4 apps taking up 400 MB+',
+    lifio: 'Tiny app under 25 MB',
     highlight: true
   },
   {
-    feature: 'Battery & RAM Consumption',
-    separate: '4 background sync daemons draining battery',
-    lifio: 'Single local process, 90% less RAM',
+    feature: 'Battery Friendly',
+    separate: 'Drains battery running in the background',
+    lifio: 'Gentle on your phone battery',
     highlight: true
   },
   {
-    feature: 'Account Registration & Passwords',
-    separate: '4 logins, passwords & email verifications',
-    lifio: 'Zero accounts required. Instant open',
+    feature: 'Sign-Ups & Passwords',
+    separate: '4 different accounts & passwords',
+    lifio: 'No signup needed, opens immediately',
     highlight: false
   },
   {
-    feature: 'Data Privacy & Telemetry',
-    separate: 'Multiple cloud databases & ad trackers',
-    lifio: '100% on-device SQLite database',
+    feature: 'Your Personal Privacy',
+    separate: 'Data uploaded to clouds & ad trackers',
+    lifio: '100% private, stays on your phone',
     highlight: true
   },
   {
-    feature: 'Subscription Costs',
-    separate: '$15–$30/month across multiple SaaS apps',
-    lifio: '100% Free with zero recurring traps',
+    feature: 'Cost & Fees',
+    separate: 'Monthly subscriptions ($15–$30/mo)',
+    lifio: 'Completely free, no hidden costs',
     highlight: false
   }
 ];
@@ -49,15 +49,15 @@ const comparisonItems: ComparisonItem[] = [
     <div class="text-center max-w-2xl mx-auto space-y-3">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E5E2DC] text-xs font-medium text-[#171717]">
         <Zap className="w-3.5 h-3.5 text-[#FFBB2C]" />
-        <span class="uppercase tracking-wider text-[11px] font-semibold text-[#5F5C57]">Unmatched Efficiency</span>
+        <span class="uppercase tracking-wider text-[11px] font-semibold text-[#5F5C57]">Why Lifio</span>
       </div>
 
       <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight">
-        Why replace 4 separate apps with Lifio?
+        Why juggle 4 different apps when you can use one?
       </h2>
 
       <p class="text-sm sm:text-base text-[#5F5C57] font-normal leading-relaxed">
-        Running separate tools for Health, Habits, Notes, and Expenses drains your battery, fragments your focus, and scatters your personal data.
+        Using separate apps for steps, habits, notes, and money drains your battery, clutters your screen, and makes your day more complicated.
       </p>
     </div>
 
@@ -69,10 +69,10 @@ const comparisonItems: ComparisonItem[] = [
           <Zap className="w-5 h-5 stroke-[2]" />
         </div>
         <h3 class="text-lg font-semibold text-[#171717] tracking-tight">
-          Instant Speed & Launch
+          Fast & Instant
         </h3>
         <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
-          Opens in milliseconds. Log steps, daily spending, or quick note ideas without waiting for cloud sync spinners or splash screens.
+          Opens right away with zero waiting. Log a habit, write down a thought, or record an expense in just a few seconds.
         </p>
       </div>
 
@@ -81,10 +81,10 @@ const comparisonItems: ComparisonItem[] = [
           <Battery className="w-5 h-5 stroke-[2]" />
         </div>
         <h3 class="text-lg font-semibold text-[#171717] tracking-tight">
-          Maximum Battery Health
+          Saves Your Battery
         </h3>
         <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
-          Saves background battery cycles and memory overhead by eliminating third-party analytics pings and ad tracking services.
+          Runs quietly on your phone without constant background uploads, battery-draining syncs, or annoying advertisements.
         </p>
       </div>
 
@@ -93,10 +93,10 @@ const comparisonItems: ComparisonItem[] = [
           <Layers className="w-5 h-5 stroke-[2]" />
         </div>
         <h3 class="text-lg font-semibold text-[#171717] tracking-tight">
-          Unified Daily Clarity
+          One Calm Dashboard
         </h3>
         <p class="text-sm font-normal text-[#5F5C57] leading-relaxed">
-          View your vitals, habits, pinned notes, and monthly budget on one clean dashboard without switching back and forth between apps.
+          See your daily progress, habits, notes, and monthly budget together without flipping back and forth between different apps.
         </p>
       </div>
 
@@ -107,12 +107,12 @@ const comparisonItems: ComparisonItem[] = [
       
       <div class="p-6 sm:p-8 border-b border-[#E5E2DC] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span class="text-[11px] font-medium text-[#858174] uppercase tracking-wider block mb-1">Direct Comparison</span>
-          <h3 class="text-xl font-semibold text-[#171717]">4 Separate SaaS Apps vs. Lifio</h3>
+          <span class="text-[11px] font-medium text-[#858174] uppercase tracking-wider block mb-1">Side-by-Side Comparison</span>
+          <h3 class="text-xl font-semibold text-[#171717]">4 Separate Apps vs. Lifio</h3>
         </div>
         <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0EFEB] rounded-lg border border-[#E5E2DC] text-xs text-[#5F5C57] font-medium self-start sm:self-auto">
           <Sparkles className="w-3.5 h-3.5 text-[#FFBB2C]" />
-          <span>Tested on Android 14</span>
+          <span>Simple & Clean</span>
         </div>
       </div>
 
@@ -146,4 +146,3 @@ const comparisonItems: ComparisonItem[] = [
 
   </div>
 </section>
-
