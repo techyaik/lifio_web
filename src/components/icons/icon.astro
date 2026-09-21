@@ -1,0 +1,20 @@
+---
+import { iconGlyphs, type IconName } from './icon-glyphs';
+
+interface Props {
+  readonly name: IconName;
+  /** Rendered size in pixels. */
+  readonly size?: number;
+  readonly class?: string;
+}
+
+const { name, size = 20, class: className = '' } = Astro.props;
+
+// Icons are decoration: the text next to them carries the meaning, so screen readers skip them.
+const svg = iconGlyphs[name].replace(
+  '<svg ',
+  `<svg width="${size}" height="${size}" class="shrink-0 ${className}" aria-hidden="true" focusable="false" `,
+);
+---
+
+<Fragment set:html={svg} />

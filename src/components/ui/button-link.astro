@@ -1,0 +1,50 @@
+---
+import Icon from '@/components/icons/icon.astro';
+import type { IconName } from '@/components/icons/icon-glyphs';
+
+/**
+ * The app's pill button, as a link.
+ * - `primary`: ink fill (white in dark mode), the one main action.
+ * - `secondary`: grey chrome fill.
+ * - `on-hero`: white pill on the sky gradient or the ink block.
+ * - `on-hero-quiet`: translucent white on the sky gradient.
+ */
+interface Props {
+  readonly href: string;
+  readonly variant?: 'primary' | 'secondary' | 'on-hero' | 'on-hero-quiet';
+  readonly size?: 'md' | 'lg';
+  readonly leadingIcon?: IconName;
+  readonly trailingIcon?: IconName;
+  readonly external?: boolean;
+  readonly class?: string;
+}
+
+const { href, variant = 'primary', size = 'md', leadingIcon, trailingIcon, external = false, class: className = '' } = Astro.props;
+
+const variants = {
+  primary: 'bg-brand text-on-brand hover:bg-brand-pressed',
+  secondary: 'bg-chrome text-ink hover:bg-line',
+  'on-hero': 'bg-white text-[#0A0A0B] hover:bg-white/90',
+  'on-hero-quiet': 'bg-white/15 text-white hover:bg-white/25',
+} as const;
+
+const sizes = {
+  md: 'h-11 px-5 text-[15px] gap-2',
+  lg: 'h-13 px-6 text-base gap-2.5',
+} as const;
+---
+
+<a
+  href={href}
+  class:list={[
+    'inline-flex items-center justify-center rounded-full font-semibold whitespace-nowrap transition-colors active:scale-[0.98]',
+    variants[variant],
+    sizes[size],
+    className,
+  ]}
+  {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
+>
+  {leadingIcon && <Icon name={leadingIcon} size={size === 'lg' ? 20 : 18} />}
+  <slot />
+  {trailingIcon && <Icon name={trailingIcon} size={size === 'lg' ? 20 : 18} />}
+</a>

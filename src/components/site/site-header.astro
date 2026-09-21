@@ -1,0 +1,87 @@
+---
+import BrandMark from '@/components/brand/brand-mark.astro';
+import Icon from '@/components/icons/icon.astro';
+import Container from '@/components/ui/container.astro';
+import { navLinks } from './nav-links';
+import ThemeSwitch from './theme-switch.astro';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) => !href.includes('#') && path === href;
+---
+
+<header class="sticky top-0 z-50 border-b border-line bg-page/85 backdrop-blur-md">
+  <Container class="flex h-16 items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-2.5 rounded-full" aria-label="Lifio home">
+      <BrandMark size={34} />
+      <span class="text-xl font-bold tracking-[-0.02em] text-ink">Lifio</span>
+    </a>
+
+    <div class="flex items-center gap-2">
+      <nav aria-label="Main" class="hidden items-center gap-1 md:flex">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class:list={[
+                'rounded-full px-4 py-2 text-[15px] font-medium transition-colors',
+                isActive(link.href) ? 'bg-chrome text-ink' : 'text-ink-2 hover:bg-surface hover:text-ink',
+              ]}
+              aria-current={isActive(link.href) ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <ThemeSwitch class="md:ml-2" />
+
+      <button
+        type="button"
+        class="inline-flex size-11 items-center justify-center rounded-full bg-surface text-ink md:hidden"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        data-menu-button
+      >
+        <span class="sr-only">Menu</span>
+        <span data-menu-open><Icon name="menu" size={22} /></span>
+        <span data-menu-close hidden><Icon name="close" size={22} /></span>
+      </button>
+    </div>
+  </Container>
+
+  <nav id="mobile-nav" aria-label="Main" class="border-t border-line bg-page md:hidden" hidden data-menu>
+    <Container class="flex flex-col gap-1 py-3">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={['rounded-row px-4 py-3 text-base font-medium', isActive(link.href) ? 'bg-chrome text-ink' : 'text-ink hover:bg-surface']}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </Container>
+  </nav>
+</header>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-menu-button]');
+  const menu = document.querySelector<HTMLElement>('[data-menu]');
+  const openIcon = document.querySelector<HTMLElement>('[data-menu-open]');
+  const closeIcon = document.querySelector<HTMLElement>('[data-menu-close]');
+
+  const setOpen = (open: boolean) => {
+    if (!button || !menu || !openIcon || !closeIcon) return;
+    menu.hidden = !open;
+    openIcon.hidden = open;
+    closeIcon.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+  };
+
+  button?.addEventListener('click', () => setOpen(menu?.hidden === true));
+  // Following a link (including a same-page #section) closes the menu.
+  menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+</script>

@@ -1,0 +1,24 @@
+---
+import Icon from '@/components/icons/icon.astro';
+import type { IconName } from '@/components/icons/icon-glyphs';
+import { toneClasses, type Tone } from '@/data/tones';
+
+/** The app's BrandBadge: an icon on a soft tile of one of the five tones. */
+interface Props {
+  readonly icon: IconName;
+  readonly tone: Tone;
+  readonly size?: 'md' | 'lg';
+}
+
+const { icon, tone, size = 'md' } = Astro.props;
+---
+
+<span
+  class:list={[
+    'inline-flex shrink-0 items-center justify-center',
+    size === 'lg' ? 'size-12 rounded-[16px]' : 'size-10 rounded-[13px]',
+    toneClasses[tone],
+  ]}
+>
+  <Icon name={icon} size={size === 'lg' ? 24 : 20} />
+</span>

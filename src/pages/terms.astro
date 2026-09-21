@@ -1,213 +1,82 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import { Scale, Mail, HeartPulse, Wallet, HardDrive } from 'lucide-react';
+import LegalPage from '@/components/ui/legal-page.astro';
+import { site } from '@/config/site';
+import BaseLayout from '@/layouts/base-layout.astro';
 ---
 
-<Layout 
-  title="Terms of Service | Lifio — Google Play & App Store Compliant" 
-  description="Official Terms of Service for the Lifio mobile application. Standard End User License Agreement (EULA) compliant with Google Play Store and Apple App Store policies."
->
-  <Navbar />
+<BaseLayout title="Terms of use" description="The terms for using the Lifio app: a personal, private journal for habits and wellbeing. Not medical advice.">
+  <LegalPage eyebrow="Terms" title="Terms of use" lead="The agreement between you and us when you use Lifio. Written to be read, not skimmed past.">
+    <h2>1. The agreement</h2>
+    <p>
+      These terms, together with our <a href="/privacy">privacy policy</a>, are an agreement between you and <strong>{site.developer}</strong> (“we”, “us”)
+      about the Lifio app. By installing or using Lifio you accept them. If you don’t, please don’t use the app.
+    </p>
 
-  <main class="py-12 sm:py-20 bg-[#F0EFEB] min-h-screen">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
-      
-      {/* Page Header */}
-      <div class="text-center space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E5E2DC] text-xs font-semibold text-[#171717]">
-          <Scale class="w-3.5 h-3.5 text-[#FFBB2C]" />
-          <span class="tracking-wider uppercase text-[11px] font-semibold text-[#5F5C57]">Store Policy Compliant EULA</span>
-        </div>
+    <h2>2. Your licence to use Lifio</h2>
+    <p>
+      We give you a personal, non-exclusive, non-transferable licence to use Lifio on devices you own or control, in line with these terms and the terms of
+      the store you got it from. Please don’t copy, modify, resell or redistribute the app, remove its notices, or try to extract its source code, except
+      where the law allows it.
+    </p>
 
-        <h1 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight">
-          Terms of Service (EULA)
-        </h1>
+    <h2>3. Not medical advice</h2>
+    <p>
+      <strong>Lifio is a personal journal, not a medical device.</strong> Mood, sleep, weight, heart rate, symptoms and anything else you log are for your own
+      reference. Lifio does not diagnose, treat or prevent any condition, and its notes and summaries are observations, never advice.
+    </p>
+    <ul>
+      <li>Talk to a doctor or other qualified professional about any health concern.</li>
+      <li>Never ignore professional advice, or delay seeking it, because of something shown in Lifio.</li>
+      <li>In an emergency, call your local emergency number straight away.</li>
+    </ul>
 
-        <p class="text-xs text-[#858174] font-normal">
-          Last Updated: September 18, 2026 • Applies to Lifio on Android (Google Play) & iOS (Apple App Store)
-        </p>
-      </div>
+    <h2>4. Your data, and backing it up</h2>
+    <ul>
+      <li><strong>It’s yours.</strong> Everything you enter belongs to you. We claim no rights over it.</li>
+      <li><strong>It stays on your phone.</strong> Lifio has no servers, so we hold no copy and cannot recover lost data.</li>
+      <li>
+        <strong>Backups are up to you.</strong> Use Settings → Backup & restore to keep a backup file somewhere safe. Uninstalling the app or clearing its data
+        deletes everything on the phone.
+      </li>
+    </ul>
 
-      {/* Main Legal Content Container */}
-      <div class="bg-white rounded-[24px] p-7 sm:p-12 border border-[#E5E2DC] space-y-9 text-sm font-normal text-[#5F5C57] leading-relaxed">
-        
-        {/* Section 1: Agreement to Terms */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
-            1. Agreement to Terms & End User License Agreement
-          </h2>
-          <p>
-            These Terms of Service (along with our <a href="/privacy" class="text-[#171717] font-semibold hover:underline">Privacy Policy</a>) constitute a legally binding End User License Agreement ("EULA", "Terms") between you ("User" or "you") and <strong class="text-[#171717] font-medium">Imran / Idexa</strong> ("Developer", "we", "our", or "us") regarding your download, installation, and use of the <strong class="text-[#171717] font-medium">Lifio</strong> mobile application ("Application" or "App").
-          </p>
-          <p>
-            By downloading, installing, accessing, or using Lifio from the <strong class="text-[#171717] font-medium">Google Play Store</strong> or the <strong class="text-[#171717] font-medium">Apple App Store</strong>, you agree to be bound by these Terms. If you do not agree to these Terms, do not install or use the Application.
-          </p>
-        </section>
+    <h2>5. The stores</h2>
+    <p>
+      These terms are between you and us, not Google or any other store. We alone are responsible for Lifio and its support. The store’s own terms also
+      apply to your download.
+    </p>
 
-        {/* Section 2: License Grant */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
-            2. Scope of License
-          </h2>
-          <p>
-            We grant you a revocable, non-exclusive, non-transferable, limited personal license to install and use the Application on compatible personal mobile devices (Android or iOS) that you own or control, strictly in accordance with these Terms and the applicable usage rules established by the Google Play Terms of Service or the Apple Media Services Terms and Conditions.
-          </p>
-          <p>
-            You agree not to:
-          </p>
-          <ul class="list-disc pl-5 space-y-1">
-            <li>Decompile, reverse engineer, disassemble, or attempt to derive the source code of the App;</li>
-            <li>Modify, adapt, translate, or create derivative works based on the App;</li>
-            <li>Rent, lease, lend, sell, sublicense, distribute, or commercially exploit the App;</li>
-            <li>Remove, alter, or obscure any proprietary notice, watermark, or copyright attribution.</li>
-          </ul>
-        </section>
+    <h2>6. Changes to Lifio</h2>
+    <p>
+      We may improve, change or remove features over time. Planned work is shown on the <a href="/roadmap">roadmap</a>, but plans can change, and nothing on it
+      is a promise of a feature or a date.
+    </p>
 
-        {/* Section 3: Important Medical Disclaimer */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC] flex items-center gap-2">
-            <HeartPulse class="w-4 h-4 text-[#8DAF2B]" />
-            <span>3. Medical & Health Information Disclaimer (Crucial Notice)</span>
-          </h2>
-          
-          <div class="p-4 rounded-xl bg-[#F5F8EF] border border-[#E5E2DC] text-xs sm:text-sm text-[#171717] space-y-2">
-            <p class="font-semibold">
-              LIFIO IS A PERSONAL SELF-TRACKING AND LIFESTYLE TOOL. IT IS NOT A MEDICAL DEVICE AND DOES NOT PROVIDE MEDICAL ADVICE.
-            </p>
-            <p class="text-[#5F5C57] font-normal leading-relaxed">
-              All physical wellness metrics, including steps, activity minutes, sleep duration, resting heart rate, and data read via Google Health Connect or Apple Health, are presented solely for general informational and self-awareness purposes.
-            </p>
-            <ul class="list-disc pl-5 space-y-1 text-[#5F5C57] font-normal">
-              <li>Lifio is not designed to diagnose, monitor, treat, cure, or prevent any illness, disease, cardiovascular condition, or physical disorder.</li>
-              <li>Always seek the advice of a qualified physician, cardiologist, or healthcare professional with any questions regarding medical symptoms or health conditions.</li>
-              <li>Never disregard professional medical advice or delay seeking medical care because of information tracked or displayed in Lifio.</li>
-              <li>If you believe you may have a medical emergency, call your local emergency service (e.g., 911 / 112) immediately.</li>
-            </ul>
-          </div>
-        </section>
+    <h2>7. Ownership</h2>
+    <p>
+      The app, its design, artwork, name and logo belong to {site.developer}. Lifio includes open-source components under their own licences, listed in the
+      app under Settings → About.
+    </p>
 
-        {/* Section 4: Financial Disclaimers */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC] flex items-center gap-2">
-            <Wallet class="w-4 h-4 text-[#805044]" />
-            <span>4. Financial & Expense Bookkeeping Disclaimer</span>
-          </h2>
-          <p>
-            The expense tracker and multi-wallet budgeting tools in Lifio are provided strictly for personal manual record-keeping. Lifio is not a bank, certified financial advisor, accountant, or tax advisory service. You are solely responsible for verifying the accuracy of any spending calculations, currency conversions, or budget allocations.
-          </p>
-        </section>
+    <h2>8. No warranty</h2>
+    <p>
+      As far as the law allows, Lifio is provided “as is” and “as available”, without warranties of any kind, including fitness for a particular purpose,
+      accuracy, or uninterrupted operation. Reminders depend on your phone and may be delayed or blocked by its settings.
+    </p>
 
-        {/* Section 5: Local Storage & User Backup Responsibility */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC] flex items-center gap-2">
-            <HardDrive class="w-4 h-4 text-[#FFBB2C]" />
-            <span>5. User Data Ownership & Backup Responsibility</span>
-          </h2>
-          <p>
-            Because Lifio is built on a <strong class="text-[#171717] font-medium">100% offline, local-first architecture</strong>:
-          </p>
-          <ul class="list-disc pl-5 space-y-1.5">
-            <li><strong class="text-[#171717] font-medium">Full Ownership:</strong> You retain complete and unencumbered ownership of all journal notes, routines, expense entries, and health logs created in the App.</li>
-            <li><strong class="text-[#171717] font-medium">No Cloud Backups:</strong> Lifio does not upload or maintain copies of your database on remote servers. We cannot recover lost data on your behalf.</li>
-            <li><strong class="text-[#171717] font-medium">User Responsibility:</strong> You are solely responsible for backing up your device using standard operating system backups (such as Google One or Apple iCloud device backups) or in-app export tools.</li>
-            <li><strong class="text-[#171717] font-medium">Data Deletion:</strong> Clearing application cache/data in device Settings or uninstalling the Application permanently erases the local database.</li>
-          </ul>
-        </section>
+    <h2>9. Limit of liability</h2>
+    <p>
+      As far as the law allows, we are not liable for indirect, incidental, special or consequential damages, or for loss of data, arising from your use of
+      Lifio or your inability to use it. Nothing in these terms limits rights you have under consumer law that cannot be limited.
+    </p>
 
-        {/* Section 6: App Store & Google Play Third-Party Beneficiary Terms */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
-            6. App Store (Apple) & Google Play Store Terms
-          </h2>
-          <p>
-            If you downloaded Lifio from the Apple App Store or Google Play Store:
-          </p>
-          <ul class="list-disc pl-5 space-y-1.5">
-            <li><strong class="text-[#171717] font-medium">Acknowledgment:</strong> These Terms are concluded between you and Imran / Idexa only, and not with Apple Inc. or Google LLC. We are solely responsible for Lifio and its content.</li>
-            <li><strong class="text-[#171717] font-medium">Maintenance & Support:</strong> We are solely responsible for providing any maintenance and support services for the App. Apple and Google have no obligation whatsoever to furnish any maintenance or support services.</li>
-            <li><strong class="text-[#171717] font-medium">Third-Party Beneficiaries:</strong> You acknowledge that Apple Inc., its subsidiaries, and Google LLC are third-party beneficiaries of these Terms. Upon your acceptance of these Terms, Apple and Google will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary.</li>
-          </ul>
-        </section>
+    <h2>10. Ending the agreement</h2>
+    <p>You can end this agreement at any time by uninstalling Lifio. The sections on medical information, data, ownership, warranty and liability still apply.</p>
 
-        {/* Section 7: Intellectual Property */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
-            7. Intellectual Property Rights
-          </h2>
-          <p>
-            All title, ownership rights, and intellectual property rights in and to the Application (including all visual interfaces, graphic illustrations, artwork, animations, software code, logos, and documentation) are owned by Imran / Idexa. All rights not expressly granted to you are reserved.
-          </p>
-        </section>
+    <h2>11. Changes to these terms</h2>
+    <p>If these terms change, the new version will appear here with a new date. Using Lifio after that means you accept the new terms.</p>
 
-        {/* Section 8: Disclaimer of Warranties */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
-            8. Disclaimer of Warranties ("AS IS")
-          </h2>
-          <p class="uppercase text-xs tracking-wider text-[#171717] font-semibold">
-            TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW:
-          </p>
-          <p>
-            LIFIO IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND. WE DISCLAIM ALL WARRANTIES AND CONDITIONS, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, QUIET ENJOYMENT, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE FUNCTIONS CONTAINED IN THE APP WILL MEET YOUR REQUIREMENTS OR OPERATE WITHOUT INTERRUPTION.
-          </p>
-        </section>
-
-        {/* Section 9: Limitation of Liability */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
-            9. Limitation of Liability
-          </h2>
-          <p>
-            TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL THE DEVELOPER (IMRAN / IDEXA), AFFILIATES, OR DISTRIBUTORS BE LIABLE FOR PERSONAL INJURY OR ANY INCIDENTAL, SPECIAL, INDIRECT, CONSEQUENTIAL, OR PUNITIVE DAMAGES WHATSOEVER (INCLUDING DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, DEVICE DAMAGE, OR BUSINESS INTERRUPTION) ARISING OUT OF OR RELATED TO YOUR USE OR INABILITY TO USE LIFIO, HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY.
-          </p>
-        </section>
-
-        {/* Section 10: Termination & Governing Law */}
-        <section class="space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717] pb-2 border-b border-[#E5E2DC]">
-            10. Termination & Governing Law
-          </h2>
-          <p>
-            These Terms are effective until terminated by you or us. You may terminate these Terms at any time by deleting the Application and all copies thereof from your mobile devices. These Terms shall be governed by and construed in accordance with standard international consumer and commercial principles without regard to conflict of law rules.
-          </p>
-        </section>
-
-        {/* Section 11: Contact */}
-        <section class="pt-6 border-t border-[#E5E2DC] space-y-3">
-          <h2 class="text-base sm:text-lg font-semibold text-[#171717]">
-            11. Contact & Legal Support
-          </h2>
-          <p>
-            For questions, legal notices, or feedback concerning these Terms of Service:
-          </p>
-
-          <div class="p-5 rounded-2xl bg-[#FAF9F7] border border-[#E5E2DC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div class="space-y-1">
-              <span class="text-[11px] font-medium uppercase tracking-wider text-[#858174]">Official Legal Contact</span>
-              <a 
-                href="mailto:imran@idexa.app" 
-                class="text-base sm:text-lg font-semibold text-[#171717] hover:text-[#FFBB2C] transition-colors flex items-center gap-2"
-              >
-                <Mail class="w-4 h-4 text-[#FFBB2C]" />
-                <span>imran@idexa.app</span>
-              </a>
-              <p class="text-xs text-[#858174]">Developer: Imran • Organization: Idexa</p>
-            </div>
-            <a 
-              href="mailto:imran@idexa.app"
-              class="inline-flex items-center justify-center bg-[#FFBB2C] hover:bg-[#f0ad24] text-[#171717] font-semibold px-5 py-2.5 rounded-xl text-xs transition-all shadow-sm flex-shrink-0"
-            >
-              Contact Developer
-            </a>
-          </div>
-        </section>
-
-      </div>
-
-    </div>
-  </main>
-
-  <Footer />
-</Layout>
+    <h2>12. Contact</h2>
+    <p>Questions about these terms: <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.</p>
+  </LegalPage>
+</BaseLayout>

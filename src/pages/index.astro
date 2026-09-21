@@ -1,25 +1,278 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import FeatureGrid from '../components/FeatureGrid.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
-import PrivacySecurity from '../components/PrivacySecurity.astro';
-import Footer from '../components/Footer.astro';
+import BrandMark from '@/components/brand/brand-mark.astro';
+import PhoneFrame from '@/components/home/phone-frame.astro';
+import Icon from '@/components/icons/icon.astro';
+import ButtonLink from '@/components/ui/button-link.astro';
+import Container from '@/components/ui/container.astro';
+import SectionHeading from '@/components/ui/section-heading.astro';
+import StoreButton from '@/components/ui/store-button.astro';
+import ToneBadge from '@/components/ui/tone-badge.astro';
+import { site } from '@/config/site';
+import { faq } from '@/data/faq';
+import { features } from '@/data/features';
+import { promises } from '@/data/promises';
+import { roadmap, statusLabels } from '@/data/roadmap';
+import { screens } from '@/data/screens';
+import BaseLayout from '@/layouts/base-layout.astro';
+
+const loop = [
+  {
+    icon: 'today',
+    tone: 'sky',
+    when: 'During the day',
+    title: 'One tap at a time',
+    body: 'Tick a habit, add a glass of water, jot down a thought. Each takes a tap or two.',
+  },
+  {
+    icon: 'sleep',
+    tone: 'lilac',
+    when: 'In the evening',
+    title: 'A one-minute check-in',
+    body: 'How was your day, how you slept, your energy, and anything left to tick. Then you’re done.',
+  },
+  {
+    icon: 'calendar',
+    tone: 'mint',
+    when: 'Whenever you like',
+    title: 'See how you’re doing',
+    body: 'Streaks, your mood calendar, health history and a week at a glance, all worked out on your phone.',
+  },
+] as const;
+
+const [heroScreen, ...galleryScreens] = screens;
+const upcoming = roadmap.filter((release) => release.status === 'next' || release.status === 'planned');
 ---
 
-<Layout 
-  title="Lifio — Master your day, health, and wealth in one calm place" 
-  description="The simple, all-in-one personal tracker for Android. Track your daily steps and health, build positive habits, write personal notes, and manage your budget with 100% privacy."
->
-  <Navbar />
-  
-  <main class="flex-1">
-    <Hero />
-    <FeatureGrid />
-    <WhyChooseUs />
-    <PrivacySecurity />
-  </main>
-  
-  <Footer />
-</Layout>
+<BaseLayout>
+  <!-- Hero: the app's sky-gradient hero card, with the real Today screen beside it -->
+  <section class="pt-4 sm:pt-6">
+    <Container>
+      <div class="bg-hero relative overflow-hidden rounded-hero text-white">
+        <span class="pointer-events-none absolute -top-40 -right-32 size-[520px] rounded-full bg-white/10" aria-hidden="true"></span>
+        <span class="pointer-events-none absolute -bottom-56 -left-40 size-[440px] rounded-full bg-white/[0.07]" aria-hidden="true"></span>
+
+        <div class="relative grid items-center gap-12 px-6 py-12 sm:px-12 sm:py-16 lg:grid-cols-[1.3fr_1fr] lg:gap-8 lg:px-16 lg:py-16">
+          <div class="flex flex-col items-start gap-6">
+            <p class="text-[13px] font-semibold tracking-[0.1em] text-white/80 uppercase">{site.oneLiner.replace(/\.$/, '')}</p>
+            <h1 class="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-balance sm:text-6xl">{site.tagline}</h1>
+            <p class="max-w-lg text-lg leading-relaxed text-white/90">
+              Habits, mood, health, water and notes in one calm place, with a one-minute check-in each evening. No account, no ads, no cloud.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <StoreButton variant="on-hero" size="lg" />
+              <ButtonLink href="/roadmap" variant="on-hero-quiet" size="lg" trailingIcon="arrow-right">See what’s coming</ButtonLink>
+            </div>
+            <ul class="flex flex-wrap gap-x-5 gap-y-2 text-[15px] font-medium text-white/90">
+              {
+                ['No account', 'No ads or tracking', 'Works offline'].map((item) => (
+                  <li class="flex items-center gap-1.5">
+                    <Icon name="check-circle-fill" size={18} />
+                    {item}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          {heroScreen && <PhoneFrame screen={heroScreen} width={290} priority class="mx-auto" />}
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- The daily loop -->
+  <section class="py-20 sm:py-28">
+    <Container class="flex flex-col gap-12">
+      <SectionHeading
+        eyebrow="How it works"
+        title="One minute a day is enough."
+        lead="Lifio is built around a short evening check-in. Everything else is there when you want it, and can be switched off when you don’t."
+      />
+      <div class="grid gap-4 md:grid-cols-3">
+        {
+          loop.map((step) => (
+            <article class="flex flex-col gap-4 rounded-card bg-surface p-6 sm:p-7">
+              <ToneBadge icon={step.icon} tone={step.tone} size="lg" />
+              <div class="flex flex-col gap-1.5">
+                <p class="text-sm font-semibold text-ink-3">{step.when}</p>
+                <h3 class="text-xl font-bold tracking-[-0.01em] text-ink">{step.title}</h3>
+                <p class="leading-relaxed text-ink-2">{step.body}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </Container>
+  </section>
+
+  <!-- Real screenshots -->
+  <section id="screens" class="pb-20 sm:pb-28">
+    <Container class="flex flex-col gap-12">
+      <SectionHeading eyebrow="Inside the app" title="What Lifio looks like." lead="Real screenshots, straight from a phone running Lifio 1.0." />
+      <div class="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
+        {
+          galleryScreens.map((screen) => (
+            <figure class="flex snap-center flex-col items-center gap-5 rounded-hero bg-surface px-6 pt-8 pb-7">
+              <PhoneFrame screen={screen} width={250} />
+              <figcaption class="flex flex-col gap-1 text-center">
+                <span class="text-lg font-bold text-ink">{screen.title}</span>
+                <span class="max-w-[16rem] leading-relaxed text-ink-2">{screen.caption}</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </Container>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="pb-20 sm:pb-28">
+    <Container class="flex flex-col gap-12">
+      <SectionHeading
+        eyebrow="In Lifio 1.0"
+        title="Everything for your day. Nothing you don’t need."
+        lead="Pick the areas you care about when you start. Change your mind any time in Settings."
+      />
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          features.map((feature) => (
+            <article class="flex flex-col gap-5 rounded-card bg-surface p-6 sm:p-7">
+              <ToneBadge icon={feature.icon} tone={feature.tone} />
+              <div class="flex flex-1 flex-col gap-2">
+                <h3 class="text-lg font-bold tracking-[-0.01em] text-ink">{feature.title}</h3>
+                <p class="leading-relaxed text-ink-2">{feature.body}</p>
+              </div>
+              <ul class="flex flex-wrap gap-1.5">
+                {feature.details.map((detail) => (
+                  <li class="rounded-full bg-sunken px-3 py-1 text-[13px] font-medium text-ink-2">{detail}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+      <p class="text-[15px] text-ink-3">
+        Also: light and dark themes, kilograms or pounds, glasses, ml or fl oz, and sample data to try things out first.
+      </p>
+    </Container>
+  </section>
+
+  <!-- Privacy: the inverse block, like the app's focal card -->
+  <section id="privacy" class="pb-20 sm:pb-28">
+    <Container>
+      <div class="flex flex-col gap-12 rounded-hero bg-focal px-6 py-12 text-on-focal sm:px-12 sm:py-16 lg:px-16">
+        <div class="flex max-w-2xl flex-col gap-3">
+          <p class="text-[13px] font-semibold tracking-[0.08em] text-on-focal-muted uppercase">Privacy</p>
+          <h2 class="text-3xl leading-[1.15] font-bold tracking-[-0.025em] text-balance sm:text-[40px]">Your life stays on your phone.</h2>
+          <p class="text-lg leading-relaxed text-on-focal-muted">
+            Lifio has no servers and no accounts. What you write down is stored in the app’s private storage on your phone, and nowhere else.
+          </p>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            promises.map((promise) => (
+              <div class="flex flex-col gap-3 rounded-card bg-focal-panel p-6">
+                <Icon name={promise.icon} size={24} />
+                <h3 class="text-lg font-bold">{promise.title}</h3>
+                <p class="leading-relaxed text-on-focal-muted">{promise.body}</p>
+              </div>
+            ))
+          }
+        </div>
+        <div>
+          <a
+            href="/privacy"
+            class="inline-flex h-11 items-center gap-2 rounded-full bg-on-focal px-5 text-[15px] font-semibold text-focal transition-opacity hover:opacity-90"
+          >
+            Read the privacy policy
+            <Icon name="arrow-right" size={18} />
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Roadmap teaser -->
+  <section class="pb-20 sm:pb-28">
+    <Container class="flex flex-col gap-12">
+      <SectionHeading eyebrow="Roadmap" title="What’s coming next." lead="Lifio grows one careful release at a time. Here’s what comes after 1.0." />
+      <div class="grid gap-4 md:grid-cols-2">
+        {
+          upcoming.map((release) => (
+            <article class="flex flex-col gap-5 rounded-card bg-surface p-6 sm:p-7">
+              <div class="flex items-center gap-2.5">
+                <span class:list={['rounded-full px-3 py-1 text-[13px] font-semibold', release.status === 'next' ? 'bg-brand text-on-brand' : 'bg-chrome text-ink-2']}>
+                  {statusLabels[release.status]}
+                </span>
+                <p class="text-sm font-semibold text-ink-3">Version {release.version}</p>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <h3 class="text-2xl font-bold tracking-[-0.02em] text-ink">{release.name}</h3>
+                <p class="leading-relaxed text-ink-2">{release.summary}</p>
+              </div>
+              <ul class="flex flex-col gap-1 rounded-panel bg-sunken p-2">
+                {release.items.slice(0, 4).map((item) => (
+                  <li class="flex items-center gap-3 rounded-[14px] px-2 py-2">
+                    <ToneBadge icon={item.icon} tone={item.tone} />
+                    <span class="font-semibold text-ink">{item.title}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+      <div>
+        <ButtonLink href="/roadmap" trailingIcon="arrow-right">See the full roadmap</ButtonLink>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Questions -->
+  <section id="faq" class="pb-20 sm:pb-28">
+    <Container class="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+      <SectionHeading eyebrow="Questions" title="Good to know." lead="Something else on your mind?">
+        <div class="pt-2">
+          <ButtonLink href="/contact" variant="secondary" trailingIcon="arrow-right">Ask us</ButtonLink>
+        </div>
+      </SectionHeading>
+      <div class="flex flex-col gap-2">
+        {
+          faq.map((item) => (
+            <details class="group rounded-row bg-surface">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-row px-5 py-4 text-[17px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                {item.question}
+                <span class="flex size-8 shrink-0 items-center justify-center rounded-full bg-sunken text-ink-2 transition-transform group-open:rotate-180">
+                  <Icon name="chevron-down" size={16} />
+                </span>
+              </summary>
+              <div class="flex flex-col items-start gap-3 px-5 pb-5">
+                <p class="leading-relaxed text-ink-2">{item.answer}</p>
+                {item.link && (
+                  <a href={item.link.href} class="font-semibold text-ink underline decoration-ink-3 underline-offset-4 hover:decoration-ink">
+                    {item.link.label}
+                  </a>
+                )}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </Container>
+  </section>
+
+  <!-- Closing call to action -->
+  <section class="pb-20 sm:pb-28">
+    <Container>
+      <div class="bg-hero relative overflow-hidden rounded-hero px-6 py-14 text-center text-white sm:px-12 sm:py-20">
+        <span class="pointer-events-none absolute -top-32 -left-24 size-80 rounded-full bg-white/10" aria-hidden="true"></span>
+        <span class="pointer-events-none absolute -right-20 -bottom-40 size-96 rounded-full bg-white/[0.07]" aria-hidden="true"></span>
+        <div class="relative flex flex-col items-center gap-6">
+          <BrandMark size={72} class="ring-1 ring-white/25" />
+          <h2 class="max-w-xl text-3xl leading-[1.15] font-bold tracking-[-0.025em] text-balance sm:text-[40px]">Start with one small check-in tonight.</h2>
+          <p class="max-w-md text-lg text-white/90">Free, private, and no account to create.</p>
+          <StoreButton variant="on-hero" size="lg" />
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

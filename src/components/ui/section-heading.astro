@@ -1,0 +1,27 @@
+---
+/** Eyebrow, title and a short lead: the head of every home-page section. */
+interface Props {
+  readonly eyebrow?: string;
+  readonly title: string;
+  readonly lead?: string;
+  readonly align?: 'start' | 'center';
+  /** Heading level: `h1` on sub-pages, `h2` inside the home page. */
+  readonly as?: 'h1' | 'h2';
+}
+
+const { eyebrow, title, lead, align = 'start', as: Heading = 'h2' } = Astro.props;
+---
+
+<div class:list={['flex max-w-2xl flex-col gap-3', align === 'center' && 'mx-auto items-center text-center']}>
+  {eyebrow && <p class="text-[13px] font-semibold tracking-[0.08em] text-ink-3 uppercase">{eyebrow}</p>}
+  <Heading
+    class:list={[
+      'font-bold tracking-[-0.025em] text-ink text-balance',
+      Heading === 'h1' ? 'text-4xl leading-[1.1] sm:text-5xl' : 'text-3xl leading-[1.15] sm:text-[40px]',
+    ]}
+  >
+    {title}
+  </Heading>
+  {lead && <p class="text-lg leading-relaxed text-ink-2 text-pretty">{lead}</p>}
+  <slot />
+</div>

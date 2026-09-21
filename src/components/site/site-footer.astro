@@ -1,0 +1,57 @@
+---
+import BrandMark from '@/components/brand/brand-mark.astro';
+import Container from '@/components/ui/container.astro';
+import { site } from '@/config/site';
+
+const groups = [
+  {
+    title: 'Lifio',
+    links: [
+      { label: 'Features', href: '/#features' },
+      { label: 'Privacy', href: '/#privacy' },
+      { label: 'Roadmap', href: '/roadmap' },
+      { label: 'Questions', href: '/#faq' },
+    ],
+  },
+  {
+    title: 'Help',
+    links: [
+      { label: 'Support', href: '/contact' },
+      { label: 'Privacy policy', href: '/privacy' },
+      { label: 'Terms of use', href: '/terms' },
+    ],
+  },
+] as const;
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-line">
+  <Container class="grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div class="flex flex-col gap-4">
+      <a href="/" class="flex items-center gap-2.5 self-start" aria-label="Lifio home">
+        <BrandMark size={34} />
+        <span class="text-xl font-bold tracking-[-0.02em] text-ink">Lifio</span>
+      </a>
+      <p class="max-w-xs text-[15px] leading-relaxed text-ink-2">{site.tagline}</p>
+    </div>
+    {
+      groups.map((group) => (
+        <nav aria-label={group.title} class="flex flex-col gap-3">
+          <p class="text-[13px] font-semibold tracking-[0.08em] text-ink-3 uppercase">{group.title}</p>
+          {group.links.map((link) => (
+            <a href={link.href} class="self-start text-[15px] font-medium text-ink-2 hover:text-ink">
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      ))
+    }
+  </Container>
+  <Container>
+    <div class="flex flex-col gap-2 border-t border-line py-6 text-sm text-ink-3 sm:flex-row sm:justify-between">
+      <p>© {year} {site.developer}</p>
+      <p>This website uses no cookies and no analytics.</p>
+    </div>
+  </Container>
+</footer>

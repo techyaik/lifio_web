@@ -1,0 +1,26 @@
+---
+import Container from '@/components/ui/container.astro';
+import SectionHeading from '@/components/ui/section-heading.astro';
+import { formatLongDate, site } from '@/config/site';
+
+/** The frame of the privacy policy and the terms: a heading, the date, and the text on a card. */
+interface Props {
+  readonly eyebrow: string;
+  readonly title: string;
+  readonly lead: string;
+}
+
+const { eyebrow, title, lead } = Astro.props;
+---
+
+<section class="pt-14 pb-20 sm:pt-20 sm:pb-28">
+  <Container width="text" class="flex flex-col gap-10">
+    <SectionHeading as="h1" eyebrow={eyebrow} title={title} lead={lead}>
+      <p class="text-[15px] text-ink-3">Last updated {formatLongDate(site.legalUpdatedOn)}</p>
+    </SectionHeading>
+    <slot name="summary" />
+    <article class="prose-lifio rounded-card bg-surface p-6 sm:p-10">
+      <slot />
+    </article>
+  </Container>
+</section>

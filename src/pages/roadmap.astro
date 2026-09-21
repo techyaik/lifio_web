@@ -1,0 +1,115 @@
+---
+import Icon from '@/components/icons/icon.astro';
+import ButtonLink from '@/components/ui/button-link.astro';
+import Container from '@/components/ui/container.astro';
+import SectionHeading from '@/components/ui/section-heading.astro';
+import ToneBadge from '@/components/ui/tone-badge.astro';
+import { site } from '@/config/site';
+import { roadmap, statusLabels, type RoadmapStatus } from '@/data/roadmap';
+import BaseLayout from '@/layouts/base-layout.astro';
+
+const statusStyles: Record<RoadmapStatus, string> = {
+  current: 'bg-hero text-white',
+  next: 'bg-brand text-on-brand',
+  planned: 'bg-chrome text-ink',
+  exploring: 'bg-sunken text-ink-2 ring-1 ring-line',
+};
+
+const principles = [
+  { icon: 'privacy', title: 'Every promise, every release', body: 'New features stay on your phone, with no account and no ads. If an idea can’t keep that, it doesn’t ship.' },
+  { icon: 'calendar', title: 'Ready, not rushed', body: 'There are no dates here on purpose. A release ships when it is solid, and not before.' },
+  { icon: 'idea', title: 'Shaped by you', body: 'The order can change with what people using Lifio tell us. Your ideas are welcome.' },
+] as const;
+
+const ideaMail = `mailto:${site.supportEmail}?subject=${encodeURIComponent('An idea for Lifio')}`;
+---
+
+<BaseLayout title="Roadmap" description="What’s in Lifio today and what comes next: Wallet, Medicine and a Weekly Review in 1.1; Health Connect import and cycle tracking in 1.2.">
+  <section class="pt-14 pb-12 sm:pt-20">
+    <Container class="flex flex-col gap-10">
+      <SectionHeading
+        as="h1"
+        eyebrow="Roadmap"
+        title="Where Lifio is heading."
+        lead="What’s in Lifio now, what we’re building next, and the ideas further out. Each area stays optional, so Lifio only grows as much as you want it to."
+      />
+      <!-- Jump links: one pill per release -->
+      <nav aria-label="Releases" class="flex flex-wrap gap-2">
+        {
+          roadmap.map((release) => (
+            <a href={`#${release.id}`} class="inline-flex items-center gap-2 rounded-full bg-surface py-1.5 pr-4 pl-1.5 text-[15px] font-semibold text-ink hover:bg-chrome">
+              <span class:list={['rounded-full px-2.5 py-0.5 text-[12px]', statusStyles[release.status]]}>{statusLabels[release.status]}</span>
+              {release.version === null ? release.name : `${release.version} · ${release.name}`}
+            </a>
+          ))
+        }
+      </nav>
+    </Container>
+  </section>
+
+  <Container class="flex flex-col gap-4 pb-20 sm:pb-28">
+    {
+      roadmap.map((release) => (
+        <section id={release.id} class="grid gap-8 rounded-hero bg-surface p-6 sm:p-10 lg:grid-cols-[0.8fr_1.4fr] lg:gap-12">
+          <div class="flex flex-col items-start gap-4 lg:sticky lg:top-24 lg:self-start">
+            <span class:list={['rounded-full px-3.5 py-1 text-[13px] font-semibold', statusStyles[release.status]]}>{statusLabels[release.status]}</span>
+            <div class="flex flex-col gap-1">
+              {release.version !== null && <p class="text-[15px] font-semibold text-ink-3">Version {release.version}</p>}
+              <h2 class="text-3xl font-bold tracking-[-0.025em] text-ink sm:text-4xl">{release.name}</h2>
+            </div>
+            <p class="text-lg leading-relaxed text-ink-2">{release.summary}</p>
+          </div>
+          <ul class="grid gap-3 sm:grid-cols-2">
+            {release.items.map((item) => (
+              <li class="flex flex-col gap-3 rounded-row bg-sunken p-5">
+                <div class="flex items-center justify-between">
+                  <ToneBadge icon={item.icon} tone={item.tone} />
+                  {release.status === 'current' && (
+                    <span class="flex items-center gap-1 text-[13px] font-semibold text-icon-mint">
+                      <Icon name="check-circle-fill" size={16} />
+                      In 1.0
+                    </span>
+                  )}
+                </div>
+                <h3 class="text-[17px] font-bold text-ink">{item.title}</h3>
+                <p class="text-[15px] leading-relaxed text-ink-2">{item.body}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </Container>
+
+  <section class="pb-20 sm:pb-28">
+    <Container class="flex flex-col gap-12">
+      <SectionHeading eyebrow="How we decide" title="Slow and steady, on purpose." />
+      <div class="grid gap-4 md:grid-cols-3">
+        {
+          principles.map((principle) => (
+            <article class="flex flex-col gap-3 rounded-card bg-surface p-6 sm:p-7">
+              <span class="flex size-12 items-center justify-center rounded-[16px] bg-sunken text-ink">
+                <Icon name={principle.icon} size={24} />
+              </span>
+              <h3 class="text-lg font-bold text-ink">{principle.title}</h3>
+              <p class="leading-relaxed text-ink-2">{principle.body}</p>
+            </article>
+          ))
+        }
+      </div>
+      <div class="flex flex-col items-start gap-5 rounded-hero bg-focal px-6 py-10 text-on-focal sm:flex-row sm:items-center sm:justify-between sm:px-10">
+        <div class="flex flex-col gap-1.5">
+          <h2 class="text-2xl font-bold tracking-[-0.02em]">Missing something?</h2>
+          <p class="text-on-focal-muted">Tell us what would make Lifio more useful for your day.</p>
+        </div>
+        <a href={ideaMail} class="inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-on-focal px-5 text-[15px] font-semibold text-focal transition-opacity hover:opacity-90">
+          <Icon name="email" size={18} />
+          Share an idea
+        </a>
+      </div>
+      <div>
+        <ButtonLink href="/#features" variant="secondary" trailingIcon="arrow-right">See what’s in Lifio today</ButtonLink>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

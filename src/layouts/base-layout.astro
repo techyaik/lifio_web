@@ -1,0 +1,91 @@
+---
+import { Font } from 'astro:assets';
+
+import SiteFooter from '@/components/site/site-footer.astro';
+import SiteHeader from '@/components/site/site-header.astro';
+import { THEME_COLORS, THEME_STORAGE_KEY } from '@/components/site/theme';
+import { site } from '@/config/site';
+import '@/styles/global.css';
+
+interface Props {
+  /** The page's own name; the home page leaves it out. */
+  readonly title?: string;
+  readonly description?: string;
+}
+
+const { title, description = site.description } = Astro.props;
+
+const fullTitle = title === undefined ? `${site.name} — ${site.oneLiner.replace(/\.$/, '')}` : `${title} · ${site.name}`;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const ogImage = new URL('/og-image.png', site.url).href;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': `${site.url}/#website`, url: site.url, name: site.name, inLanguage: 'en' },
+    {
+      '@type': 'MobileApplication',
+      '@id': `${site.url}/#app`,
+      name: site.name,
+      operatingSystem: 'Android',
+      applicationCategory: 'HealthApplication',
+      description: site.description,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content={THEME_COLORS.light} media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content={THEME_COLORS.dark} media="(prefers-color-scheme: dark)" />
+    <!-- Applies a saved Light or Dark choice before the first paint, so the page never flashes. -->
+    <script is:inline define:vars={{ key: THEME_STORAGE_KEY, colors: THEME_COLORS }}>
+      try {
+        const theme = localStorage.getItem(key);
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme;
+          document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => (meta.content = colors[theme]));
+        }
+      } catch {}
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lifio — your private daily check-in" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <Font cssVariable="--font-figtree" preload />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="flex min-h-dvh flex-col">
+    <a
+      href="#main"
+      class="sr-only z-100 rounded-full bg-brand px-5 py-3 font-semibold text-on-brand focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+    >
+      Skip to content
+    </a>
+    <SiteHeader />
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

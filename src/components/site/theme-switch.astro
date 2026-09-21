@@ -1,0 +1,69 @@
+---
+import Icon from '@/components/icons/icon.astro';
+import { THEMES } from './theme';
+
+/** Light · Dark · System, as a small segmented control like the app's Appearance setting. */
+interface Props {
+  readonly class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+
+const labels = { light: 'Light', dark: 'Dark', system: 'System' } as const;
+---
+
+<div role="radiogroup" aria-label="Appearance" class:list={['inline-flex items-center gap-0.5 rounded-full bg-surface p-1', className]} data-theme-switch>
+  {
+    THEMES.map((theme) => (
+      <button
+        type="button"
+        role="radio"
+        aria-checked={theme === 'system' ? 'true' : 'false'}
+        tabindex={theme === 'system' ? 0 : -1}
+        title={labels[theme]}
+        data-theme-option={theme}
+        class="flex size-8 items-center justify-center rounded-full text-ink-3 transition-colors hover:text-ink aria-checked:bg-brand aria-checked:text-on-brand aria-checked:hover:text-on-brand"
+      >
+        <Icon name={`theme-${theme}`} size={16} />
+        <span class="sr-only">{labels[theme]}</span>
+      </button>
+    ))
+  }
+</div>
+
+<script>
+  import { applyTheme, isTheme, readTheme, type Theme } from './theme';
+
+  const options = () => document.querySelectorAll<HTMLButtonElement>('[data-theme-option]');
+
+  // Only the chosen option is in the tab order; arrow keys move within the group.
+  const show = (theme: Theme) =>
+    options().forEach((option) => {
+      const checked = option.dataset['themeOption'] === theme;
+      option.setAttribute('aria-checked', String(checked));
+      option.tabIndex = checked ? 0 : -1;
+    });
+
+  show(readTheme());
+
+  options().forEach((option) =>
+    option.addEventListener('click', () => {
+      const theme = option.dataset['themeOption'];
+      if (!isTheme(theme)) return;
+      applyTheme(theme);
+      show(theme);
+    }),
+  );
+
+  document.querySelectorAll<HTMLElement>('[data-theme-switch]').forEach((group) =>
+    group.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+      const buttons = [...group.querySelectorAll<HTMLButtonElement>('[data-theme-option]')];
+      const current = buttons.indexOf(document.activeElement as HTMLButtonElement);
+      const next = buttons[(current + (event.key === 'ArrowRight' ? 1 : buttons.length - 1)) % buttons.length];
+      next?.focus();
+      next?.click();
+      event.preventDefault();
+    }),
+  );
+</script>

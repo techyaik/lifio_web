@@ -1,0 +1,38 @@
+---
+import Icon from '@/components/icons/icon.astro';
+import ButtonLink from '@/components/ui/button-link.astro';
+import { site } from '@/config/site';
+
+/**
+ * The Google Play button. Until the listing is public (`site.playStoreUrl` is null) it is a plain
+ * label that says so, never a link to a page that doesn't exist.
+ */
+interface Props {
+  readonly variant?: 'primary' | 'on-hero';
+  readonly size?: 'md' | 'lg';
+  readonly class?: string;
+}
+
+const { variant = 'primary', size = 'md', class: className = '' } = Astro.props;
+const url = site.playStoreUrl;
+---
+
+{
+  url !== null ? (
+    <ButtonLink href={url} variant={variant} size={size} leadingIcon="google-play" external class={className}>
+      Get it on Google Play
+    </ButtonLink>
+  ) : (
+    <span
+      class:list={[
+        'inline-flex items-center justify-center rounded-full font-semibold whitespace-nowrap',
+        variant === 'primary' ? 'bg-chrome text-ink-2' : 'bg-white/15 text-white',
+        size === 'lg' ? 'h-13 gap-2.5 px-6 text-base' : 'h-11 gap-2 px-5 text-[15px]',
+        className,
+      ]}
+    >
+      <Icon name="google-play" size={size === 'lg' ? 20 : 18} />
+      Coming soon to Google Play
+    </span>
+  )
+}

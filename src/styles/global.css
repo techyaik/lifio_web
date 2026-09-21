@@ -1,100 +1,213 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
+/*
+ * Lifio's design tokens, the same values as the app (lifio-app/src/design-system/theme/themes.ts).
+ * A white page carries grey cards; near-black ink does the talking; the sky gradient is the one
+ * coloured block on a screen. No shadows. Pages use the semantic names below, never raw hex.
+ * Each token is light-dark(light, dark): `color-scheme` on the root picks the side.
+ */
 :root {
-  /* Strict Reference Tokens */
-  --color-background: #F0EFEB;
-  --color-surface: #FFFFFF;
-  --color-surface-soft: #F7F6F2;
+  /* Follows the device unless the visitor picks Light or Dark (theme-switch.astro). */
+  color-scheme: light dark;
 
-  --color-text-primary: #171717;
-  --color-text-secondary: #5F5C57;
-  --color-text-muted: #858174;
+  --lifio-page: light-dark(#ffffff, #0a0a0b);
+  --lifio-surface: light-dark(#f5f5f5, #161719);
+  --lifio-sunken: light-dark(#ffffff, #202225);
+  --lifio-chrome: light-dark(#ececee, #26282c);
+  --lifio-border: light-dark(#ebecee, #2c2d32);
 
-  --color-border: #E5E2DC;
+  --lifio-ink: light-dark(#0a0a0b, #f5f5f7);
+  --lifio-ink-2: light-dark(#5e5e63, #9e9fa5);
+  --lifio-ink-3: light-dark(#8a8a8e, #6a6b72);
 
-  /* Primary Accent: Warm optimistic yellow/orange */
-  --color-primary: #FFBB2C;
-  --color-primary-light: #FFCC57;
-  --color-primary-dark: #E9A51B;
+  --lifio-brand: light-dark(#0a0a0b, #ffffff);
+  --lifio-brand-pressed: light-dark(#2e2f33, #e3e5e6);
+  --lifio-on-brand: light-dark(#ffffff, #0a0a0b);
 
-  /* Supporting Muted Earthy Colors */
-  --color-earth: #805044;
-  --color-olive: #8DAF2B;
-  --color-stone: #858174;
-  --color-sand: #D8CBB8;
-  --color-blush: #EBCFC7;
-  --color-lavender: #DCD7F4;
+  --lifio-focal: light-dark(#0a0a0b, #ffffff);
+  --lifio-on-focal: light-dark(#ffffff, #0a0a0b);
+  --lifio-on-focal-muted: light-dark(#a6a7ab, #5e5e63);
+  --lifio-focal-panel: light-dark(#1b1c1f, #f4f4f6);
 
-  /* Standard Rounded Radii (Standard Best Practice, not pill) */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-2xl: 24px;
+  --lifio-hero-from: light-dark(#26779f, #1e6b92);
+  --lifio-hero-to: light-dark(#12587f, #0d4a6d);
 
-  /* Font Family */
-  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --lifio-accent: light-dark(#25669e, #8ec5e9);
+  --lifio-accent-tint: light-dark(#dcedf9, #15293a);
+  --lifio-data: light-dark(#2f80c4, #5fa9da);
+  --lifio-data-soft: light-dark(#beddf3, #23425c);
+  --lifio-ember: light-dark(#c2622b, #e58b4f);
+
+  --lifio-tile-mint: light-dark(#dcefe5, #1b3a2b);
+  --lifio-tile-sky: light-dark(#dcedf9, #15293a);
+  --lifio-tile-lilac: light-dark(#e6e3f5, #252148);
+  --lifio-tile-amber: light-dark(#fbebc8, #3a2f14);
+  --lifio-tile-pink: light-dark(#fbe3e6, #3b1f20);
+  --lifio-icon-mint: light-dark(#2f6b4f, #8fd3b0);
+  --lifio-icon-sky: light-dark(#25669e, #8ec5e9);
+  --lifio-icon-lilac: light-dark(#4f45a8, #b6adf0);
+  --lifio-icon-amber: light-dark(#9c4e22, #efac7c);
+  --lifio-icon-pink: light-dark(#a63a4e, #f0a3b2);
+
+  --lifio-nav: light-dark(#0a0a0b, #ffffff);
+  --lifio-nav-idle: light-dark(#a6a7ab, #8a8a8e);
+  --lifio-nav-active: light-dark(#ffffff, #0a0a0b);
+  --lifio-on-nav-active: light-dark(#0a0a0b, #ffffff);
 }
 
-*, *::before, *::after {
-  font-family: var(--font-family);
-  box-sizing: border-box;
+:root[data-theme='light'] {
+  color-scheme: light;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-family: var(--font-family);
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
+:root[data-theme='dark'] {
+  color-scheme: dark;
 }
 
-body {
-  font-family: var(--font-family);
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme inline {
+  --font-sans: var(--font-figtree);
+
+  --color-page: var(--lifio-page);
+  --color-surface: var(--lifio-surface);
+  --color-sunken: var(--lifio-sunken);
+  --color-chrome: var(--lifio-chrome);
+  --color-line: var(--lifio-border);
+
+  --color-ink: var(--lifio-ink);
+  --color-ink-2: var(--lifio-ink-2);
+  --color-ink-3: var(--lifio-ink-3);
+
+  --color-brand: var(--lifio-brand);
+  --color-brand-pressed: var(--lifio-brand-pressed);
+  --color-on-brand: var(--lifio-on-brand);
+
+  --color-focal: var(--lifio-focal);
+  --color-on-focal: var(--lifio-on-focal);
+  --color-on-focal-muted: var(--lifio-on-focal-muted);
+  --color-focal-panel: var(--lifio-focal-panel);
+
+  --color-hero-from: var(--lifio-hero-from);
+  --color-hero-to: var(--lifio-hero-to);
+
+  --color-accent: var(--lifio-accent);
+  --color-accent-tint: var(--lifio-accent-tint);
+  --color-data: var(--lifio-data);
+  --color-data-soft: var(--lifio-data-soft);
+  --color-ember: var(--lifio-ember);
+
+  --color-tile-mint: var(--lifio-tile-mint);
+  --color-tile-sky: var(--lifio-tile-sky);
+  --color-tile-lilac: var(--lifio-tile-lilac);
+  --color-tile-amber: var(--lifio-tile-amber);
+  --color-tile-pink: var(--lifio-tile-pink);
+  --color-icon-mint: var(--lifio-icon-mint);
+  --color-icon-sky: var(--lifio-icon-sky);
+  --color-icon-lilac: var(--lifio-icon-lilac);
+  --color-icon-amber: var(--lifio-icon-amber);
+  --color-icon-pink: var(--lifio-icon-pink);
+
+  --color-nav: var(--lifio-nav);
+  --color-nav-idle: var(--lifio-nav-idle);
+  --color-nav-active: var(--lifio-nav-active);
+  --color-on-nav-active: var(--lifio-on-nav-active);
+
+  /* The app's radius scale: panels, rows, cards, hero. */
+  --radius-chip: 12px;
+  --radius-panel: 18px;
+  --radius-row: 20px;
+  --radius-card: 26px;
+  --radius-hero: 32px;
 }
 
-/* Typography Hierarchy */
-.font-display {
-  font-size: 48px;
-  line-height: 1.08;
-  font-weight: 700;
-  letter-spacing: -0.03em;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-page);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-tint);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
 
-.font-heading-page {
-  font-size: 32px;
-  line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: -0.025em;
-}
+@layer components {
+  /* The app's hero card: the sky gradient, bottom-left to top-right. */
+  .bg-hero {
+    background-image: linear-gradient(to top right, var(--color-hero-from), var(--color-hero-to));
+  }
 
-.font-heading-section {
-  font-size: 20px;
-  line-height: 1.25;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-}
-
-.font-body {
-  font-size: 15px;
-  line-height: 1.6;
-  font-weight: 400;
-  letter-spacing: -0.005em;
-}
-
-.font-supporting {
-  font-size: 13px;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-.font-meta {
-  font-size: 12px;
-  line-height: 1.3;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  /* Long-form legal text inside a card. */
+  .prose-lifio {
+    color: var(--color-ink-2);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .prose-lifio h2 {
+    color: var(--color-ink);
+    font-size: 1.25rem;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-lifio h2:first-child {
+    margin-top: 0;
+  }
+  .prose-lifio h3 {
+    color: var(--color-ink);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose-lifio p + p,
+  .prose-lifio p + ul,
+  .prose-lifio ul + p {
+    margin-top: 0.75rem;
+  }
+  .prose-lifio ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+  .prose-lifio li + li {
+    margin-top: 0.5rem;
+  }
+  .prose-lifio li::marker {
+    color: var(--color-ink-3);
+  }
+  .prose-lifio strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+  .prose-lifio a {
+    color: var(--color-ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-ink-3);
+  }
+  .prose-lifio a:hover {
+    text-decoration-color: var(--color-ink);
+  }
 }

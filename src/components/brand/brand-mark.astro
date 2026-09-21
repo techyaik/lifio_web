@@ -1,0 +1,32 @@
+---
+/**
+ * The app icon, "Habit Steps", as a vector: tiles for days climbing like a staircase, brightening
+ * towards today, with you on top, on the sky gradient. Same geometry as
+ * lifio-app/scripts/generate-icons.py (1024 grid, glyph extent 0.56, optically centred).
+ * The icon's colours are fixed: it looks the same in light and dark, like on a home screen.
+ */
+interface Props {
+  readonly size?: number;
+  readonly class?: string;
+}
+
+const { size = 36, class: className = '' } = Astro.props;
+---
+
+<span
+  class={`inline-block shrink-0 overflow-hidden rounded-[22.5%] ${className}`}
+  style={`width:${size}px;height:${size}px;background-image:linear-gradient(to top right,#26779F,#12587F)`}
+  aria-hidden="true"
+>
+  <svg width={size} height={size} viewBox="0 0 1024 1024" focusable="false" class="block">
+    <circle cx="881" cy="123" r="430" fill="#fff" fill-opacity="0.13"></circle>
+    <circle cx="973" cy="901" r="348" fill="#fff" fill-opacity="0.10"></circle>
+    <rect x="256.1" y="634.4" width="123.3" height="123.3" rx="31" fill="#fff" fill-opacity="0.59"></rect>
+    <rect x="411.4" y="479.2" width="123.3" height="123.3" rx="31" fill="#fff" fill-opacity="0.8"></rect>
+    <rect x="411.4" y="634.4" width="123.3" height="123.3" rx="31" fill="#fff" fill-opacity="0.8"></rect>
+    <rect x="566.6" y="324" width="123.3" height="123.3" rx="31" fill="#fff"></rect>
+    <rect x="566.6" y="479.2" width="123.3" height="123.3" rx="31" fill="#fff"></rect>
+    <rect x="566.6" y="634.4" width="123.3" height="123.3" rx="31" fill="#fff"></rect>
+    <circle cx="628.2" cy="231.8" r="47.5" fill="#fff"></circle>
+  </svg>
+</span>

@@ -1,3 +1,5 @@
+> **Status (22 September 2026):** this was the first plan, written when the app was called Personal Tracker. The live site follows the README and the app's own design system instead. Two decisions changed since: the site now has a **roadmap page** that shows planned work, clearly labelled as planned; and features, privacy and FAQ describe only what Lifio 1.0 really does (no Health Connect or wallet yet).
+
 # Personal Tracker — Official Website
 
 Official website for the **Personal Tracker** mobile application.

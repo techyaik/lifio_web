@@ -1,0 +1,12 @@
+---
+interface Props {
+  readonly width?: 'page' | 'text';
+  readonly class?: string;
+}
+
+const { width = 'page', class: className = '' } = Astro.props;
+---
+
+<div class:list={['mx-auto w-full px-4 sm:px-6 lg:px-8', width === 'page' ? 'max-w-6xl' : 'max-w-3xl', className]}>
+  <slot />
+</div>
